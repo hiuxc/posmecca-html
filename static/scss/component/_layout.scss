@@ -1,0 +1,42 @@
+@use 'sass:math';
+
+/*header*/
+#header {
+  height: 12rem;
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  .inner {
+    display: flex;
+    align-items: center;
+  }
+  #gnb {
+    display: flex;
+    gap: 4rem;
+    li {
+      a {
+        font-size: 2.2rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.inner {
+  width: 100%;
+  max-width: 192rem;
+  margin: auto;
+  padding: 0 26rem;
+}
+/* common layout */
+#container {
+  box-sizing: border-box;
+  .top-banner {
+    height: 52rem;
+    padding-top: 12rem;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+  }
+}

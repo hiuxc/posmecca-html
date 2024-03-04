@@ -7,10 +7,7 @@
     }
   ],
   "liveSassCompile.settings.includeItems": [
-    "/static/scss/front.scss",
-    "/static/scss/contents/work_kb_starbanking.scss",
-    "/static/scss/contents/work_kyobo_kkl.scss",
-    "/static/scss/contents/work_kb_marbling.scss",
+    "/static/scss/front.scss"
   ],
   "liveSassCompile.settings.autoprefix": [
     "> 2%",
