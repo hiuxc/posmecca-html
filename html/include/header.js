@@ -2,7 +2,7 @@ function includeHeader() {
   let str = `
 <header id="header" class="header">
   <div class="inner">
-    <h1 class="h1"><a href="main.html" aria-label="POSMECCA">POSMECCA</a></h1>
+    <h1 id="logo"><a href="main.html" aria-label="POSMECCA">POSMECCA</a></h1>
     <nav id="gnb">
       <ul>
         <li><a href="main.html" aria-label="Service">Service</a></li>
