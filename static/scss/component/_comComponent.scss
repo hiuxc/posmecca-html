@@ -1,12 +1,12 @@
 /* 공통 탭 */
 .common-tab {
   border-bottom: 0.1rem solid #dedede;
-  ul {
+  .swiper-wrapper {
     display: flex;
     width: 100%;
     margin: auto;
     max-width: 192rem;
-    li {
+    .swiper-slide {
       display: flex;
       flex: 1 1 auto;
       height: 11.2rem;
@@ -33,6 +33,41 @@
           bottom: 0;
           left: 0;
           right: 0;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+	Media Queries for Responsive Design.
+========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .common-tab {
+    width: calc(100% - 4.8rem);
+    position: relative;
+    margin: auto;
+    border-bottom: 0;
+    &::after {
+      content: '';
+      display: block;
+      width: calc(100% + 4.8rem);
+      position: absolute;
+      bottom: 0;
+      left: -2.4rem;
+      height: 0.1rem;
+      background-color: #dedede;
+    }
+    .swiper-wrapper {
+      gap: 3.2rem;
+      .swiper-slide {
+        display: flex;
+        width: auto;
+        height: 6.8rem;
+        flex: 0 0 auto;
+        a {
+          font-size: 1.8rem;
+          line-height: 2.6rem;
         }
       }
     }

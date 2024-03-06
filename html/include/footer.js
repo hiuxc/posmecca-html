@@ -2,6 +2,7 @@ function includeFooter() {
   let str = `
 <footer id="footer" class="footer">
   <div class="inner">
+    <div class="logo" role="img" aria-label="POSMECCA"></div>
     <div>
       <ul class="policy-list">
         <li>
@@ -15,7 +16,7 @@ function includeFooter() {
         </li>
       </ul>
       <div class="footer-address">
-        <p>08584 서울특별시 금천구 두산로 70 A동 1807호/1808호 (독산동 291-1 현대지식산업센터)</p>
+        <p>08584 서울특별시 금천구 두산로 70 A동 1807호/1808호 <span>(독산동 291-1 현대지식산업센터)</span></p>
         <p>
           <span>TEL 02-2668-6460</span> 
           <span>FAX 02-6008-6467</span>
@@ -25,10 +26,6 @@ function includeFooter() {
           <small class="txt_copyright">Copyright 2024 (주)피오에스메카</small>
         </div>
     </div>
-    
-    <div class="logo" role="img" aria-label="POSMECCA"></div>
-    
-    
   </div>
 </footer>
 <div class="scroll-top"><button type="button" class="btn-scroll-top" aria-label="페이지 상단으로 이동"></button></div>`;

@@ -4,6 +4,9 @@ function includeHeader() {
   <div class="inner">
     <h1 id="logo"><a href="main.html" aria-label="POSMECCA">POSMECCA</a></h1>
     <nav id="gnb">
+      <button type="button" class="btn-gnb">
+        <span class="gnb-current">모바일 메뉴 펼치기</span>
+      </button>
       <ul>
         <li><a href="main.html" aria-label="Service">Service</a></li>
         <li><a href="main.html" aria-label="Reference">Reference</a></li>
