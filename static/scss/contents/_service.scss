@@ -21,6 +21,13 @@
     color: #555;
     text-align: center;
   }
+  .footnote {
+    font-family: 'Pretendard';
+    font-size: 3.6rem;
+    line-height: 5.6rem;
+    font-weight: 800;
+    text-align: center;
+  }
   .circle-progress {
     margin: 10rem 0;
     ul {
@@ -28,6 +35,8 @@
       justify-content: center;
       align-items: center;
       gap: -vw(20);
+      width: min(140rem, -vw(1400));
+      margin: 0 auto;
       padding-bottom: -vw(130);
     }
     .step {
@@ -150,9 +159,6 @@
       line-height: min(6rem, -vw(60));
       font-weight: 800;
       text-align: center;
-      span {
-        color: $green-color;
-      }
     }
     .progress {
       position: relative;
@@ -218,6 +224,137 @@
           font-weight: 600;
           text-align: center;
           box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.04);
+        }
+      }
+    }
+  }
+  .triangle-progress {
+    position: relative;
+    width: min(65.1rem, -vw(651));
+    height: min(62.9rem, -vw(629));
+    margin: 0 auto;
+    margin-top: -vw(98);
+    margin-bottom: -vw(160);
+    background: url(../images/service/bg-circle.png) no-repeat center bottom / -vw(568) -vw(568);
+    .progress {
+      position: absolute;
+      bottom: -vw(27);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .circle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: -vw(10);
+      width: min(30rem, -vw(300));
+      height: min(30rem, -vw(300));
+      background-color: #fff;
+      border: 3px solid $green-color;
+      border-radius: -vw(200);
+      font-family: 'Pretendard';
+      text-align: center;
+      &.top {
+        position: absolute;
+        top: -vw(-300);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      strong {
+        font-size: min(2.2rem, -vw(22));
+        line-height: min(3.6rem, -vw(36));
+        font-weight: 700;
+        color: $green-color;
+      }
+      p {
+        font-size: min(2.4rem, -vw(24));
+        line-height: min(3.2rem, -vw(32));
+        font-weight: 600;
+      }
+    }
+  }
+  .card-step-box {
+    width: -vw(1400);
+    margin: 0 auto;
+    margin-bottom: -vw(120);
+    font-family: 'Pretendard';
+    > ul {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      background-color: #fafafb;
+      border-radius: -vw(12);
+      border: 1px solid #ddd;
+      overflow: hidden;
+    }
+    .card {
+      position: relative;
+      flex: 1;
+      .card-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: -vw(152);
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        font-size: min(2.2rem, -vw(22));
+        line-height: min(3.6rem, -vw(36));
+        font-weight: 700;
+        text-align: center;
+      }
+      .card-body {
+        padding: -vw(184) -vw(36) -vw(32) -vw(36);
+        font-size: min(1.8rem, -vw(18));
+        line-height: min(2.6rem, -vw(26));
+        font-weight: 500;
+        color: #555;
+      }
+      .sub-list {
+        li {
+          position: relative;
+          padding-left: -vw(13);
+          &::before {
+            content: '';
+            position: absolute;
+            top: -vw(10);
+            left: 0;
+            display: block;
+            width: 3px;
+            height: 3px;
+            background-color: #555;
+          }
+          + li {
+            margin-top: -vw(10);
+          }
+        }
+      }
+      + .card {
+        border-left: 1px solid #ddd;
+        &::before {
+          content: '';
+          position: absolute;
+          top: -vw(56);
+          left: -vw(-20);
+          display: block;
+          width: -vw(40);
+          height: -vw(40);
+          background: url(../images/service/ico-green-arrow.png) no-repeat 0 0 / cover;
+          z-index: 5;
+        }
+      }
+      &:first-child {
+        .card-header {
+          border-bottom-left-radius: -vw(12);
+        }
+      }
+      &:last-child {
+        .card-header {
+          border-bottom-right-radius: -vw(12);
         }
       }
     }
