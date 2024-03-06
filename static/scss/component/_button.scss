@@ -33,3 +33,23 @@
     padding: 1.6rem 1.2rem;
   }
 }
+
+// 더보기버튼
+.btn-more {
+  height: 8rem;
+  width: 30rem;
+  padding: 1.6rem 2rem;
+  border-radius: 1.2rem;
+  border: 1px solid #ccc;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  text-align: center;
+  color: #999;
+}
+
+// 하단 가운데정렬 버튼박스
+.btn-bottom-box {
+  display: flex;
+  justify-content: center;
+}
