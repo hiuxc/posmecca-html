@@ -15,16 +15,20 @@
   }
   &.btn-green {
     background-color: $green-color;
+    border-color: $green-color;
     color: #fff;
     &:hover {
       background-color: #309527;
+      border-color: #309527;
     }
   }
   &.btn-gray {
     background-color: #808285;
+    border-color: #808285;
     color: #fff;
     &:hover {
       background-color: #595d63;
+      border-color: #595d63;
     }
   }
   &.small {
