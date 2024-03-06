@@ -144,6 +144,7 @@
   .arrow-progress {
     margin-top: -vw(176);
     margin-bottom: -vw(198);
+    padding: 0 -vw(60);
     .title {
       font-family: 'Pretendard';
       font-size: min(4.8rem, -vw(48));
@@ -156,8 +157,9 @@
     }
     .progress {
       position: relative;
-      width: 100%;
+      width: -vw(1280);
       height: -vw(205);
+      margin: 0 auto;
       background: url(../images/service/bg-progress-arrow.png) no-repeat 0 0 / 100% 100%;
       ul {
         position: absolute;
