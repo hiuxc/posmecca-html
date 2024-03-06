@@ -80,10 +80,12 @@
   .icon-card-box {
     display: flex;
     gap: -vw(40);
+    width: min(140rem, -vw(1400));
+    margin: 0 auto;
     .card {
       flex: 1 1 auto;
       width: min(32rem, -vw(320));
-      padding: 6rem 3.2rem;
+      padding: -vw(60) -vw(32);
       border: 1px solid #ddd;
       border-radius: -vw(12);
       text-align: center;
