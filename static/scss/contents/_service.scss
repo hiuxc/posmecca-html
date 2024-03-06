@@ -1,5 +1,8 @@
 @use 'sass:math';
 // 서비스 페이지
+.bg-service {
+  background: url(../images/service/bg-subtop-service.png) no-repeat 0 0 / cover;
+}
 .service-contents {
   padding-top: 10rem;
   padding-bottom: 20rem;
@@ -11,6 +14,7 @@
     text-align: center;
   }
   .subscript {
+    font-family: 'Pretendard';
     font-weight: 500;
     font-size: 2.2rem;
     line-height: 3.6rem;
@@ -96,6 +100,18 @@
         &.ico-etc {
           background-image: url(../images/service/ico-green-etc.svg);
         }
+        &.ico-customer {
+          background-image: url(../images/service/ico-green-customer.svg);
+        }
+        &.ico-cart {
+          background-image: url(../images/service/ico-green-cart.svg);
+        }
+        &.ico-marketing {
+          background-image: url(../images/service/ico-green-marketing.svg);
+        }
+        &.ico-total {
+          background-image: url(../images/service/ico-green-total.svg);
+        }
       }
       strong {
         font-weight: 600;
@@ -125,9 +141,94 @@
       }
     }
   }
+  .arrow-progress {
+    margin-top: -vw(176);
+    margin-bottom: -vw(198);
+    .title {
+      font-family: 'Pretendard';
+      font-size: min(4.8rem, -vw(48));
+      line-height: min(6rem, -vw(60));
+      font-weight: 800;
+      text-align: center;
+      span {
+        color: $green-color;
+      }
+    }
+    .progress {
+      position: relative;
+      width: 100%;
+      height: -vw(205);
+      background: url(../images/service/bg-progress-arrow.png) no-repeat 0 0 / 100% 100%;
+      ul {
+        position: absolute;
+        top: -vw(95);
+        display: flex;
+        justify-content: space-between;
+        gap: -vw(110);
+        width: 100%;
+        padding-left: -vw(127);
+        padding-right: -vw(129);
+      }
+      li {
+        position: relative;
+        &:nth-child(n) {
+          &::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: min(9.1rem, -vw(91));
+            margin: 0 auto;
+            background-color: #c9c9c9;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: -vw(16);
+            height: -vw(16);
+            border: 1px solid #389e2f;
+            background-color: $green-color;
+            border-radius: -vw(32);
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+          }
+        }
+        &:nth-child(2n) {
+          &::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: min(11.6rem, -vw(116));
+          }
+        }
+        p {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: -vw(139);
+          padding: -vw(30) 0;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 1.2rem;
+          font-size: -vw(24);
+          line-height: -vw(32);
+          font-weight: 600;
+          text-align: center;
+          box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.04);
+        }
+      }
+    }
+  }
 }
 
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
 ========================================================================== */
+/* tablet */
+@media only screen and (max-width: 1280px) {
+}
 /* mobile */
+@media only screen and (max-width: 1025px) {
+}
