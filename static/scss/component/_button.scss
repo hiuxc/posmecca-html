@@ -1,5 +1,6 @@
 /*공통버튼*/
 .btn {
+  height: 7.2rem;
   min-width: 20rem;
   padding: 2.3rem 1.2rem;
   border-radius: 0.2rem;
@@ -9,4 +10,26 @@
   line-height: 2.6rem;
   font-weight: 700;
   text-align: center;
+  &:hover {
+    background-color: #fafafb;
+  }
+  &.btn-green {
+    background-color: $green-color;
+    color: #fff;
+    &:hover {
+      background-color: #309527;
+    }
+  }
+  &.btn-gray {
+    background-color: #808285;
+    color: #fff;
+    &:hover {
+      background-color: #595d63;
+    }
+  }
+  &.small {
+    min-width: 11.8rem;
+    height: 5.8rem;
+    padding: 1.6rem 1.2rem;
+  }
 }
