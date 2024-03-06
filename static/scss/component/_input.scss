@@ -1,1 +1,63 @@
 /*인풋박스*/
+.inputbox {
+  position: relative;
+  display: inline-block;
+  &.error {
+    input {
+      border-color: #ff1c37;
+    }
+    .txt-error {
+      display: block;
+    }
+  }
+}
+input {
+  height: 5.8rem;
+  padding: 1.6rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+  background-color: #fff;
+  outline: 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  font-family: 'Pretendard';
+  &:disabled {
+    border-color: #eee;
+    background-color: #f6f6f6;
+    color: #999;
+  }
+  &::placeholder {
+    color: #999;
+  }
+  &:hover {
+    border-color: #999;
+  }
+  &:focus,
+  &:active {
+    border-color: #999;
+    + .btn-x {
+      visibility: visible;
+    }
+  }
+}
+// 글자초기화 버튼
+.btn-x {
+  visibility: hidden;
+  position: absolute;
+  top: 1.6rem;
+  right: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../images/common/ico-input-cancel.png) no-repeat 0 0 / cover;
+  text-indent: -9999em;
+}
+// 인풋에러메세지
+.txt-error {
+  display: none;
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  color: #ff1c37;
+}
