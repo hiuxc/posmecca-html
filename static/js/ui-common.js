@@ -248,6 +248,11 @@ function mainUI() {
   // 메인 레퍼런스 스와이퍼
   $mainReferences = new Swiper('.main-references .swiper', {
     slidesPerView: 'auto',
+    freeMode: true,
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false
+    },
     preventInteractionOnTransition: false
   });
 }
