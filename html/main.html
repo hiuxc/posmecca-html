@@ -23,7 +23,6 @@
     <link rel="manifest" href="../static/css/manifest.json" />
     <!-- css -->
     <link rel="stylesheet" href="../static/css/front.min.css" />
-    <link rel="stylesheet" href="../static/css/default.min.css" />
   </head>
   <body>
     <div id="wrapper">
@@ -33,6 +32,48 @@
 
       <!-- contents -->
       <div id="container">
+        <!-- 메인 스와이프 -->
+        <div class="main-banner swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-slide-type="vdo">
+              <video
+                id="bannerVideo"
+                class="video-js"
+                preload="auto"
+                muted
+                poster="../static/images/main/img-banner1.png"
+                data-setup='{}'>
+                <source src="../static/images/main/video-banner1.mp4" type="video/mp4"></source>
+              </video>
+              <div class="banner-txt">
+                <h5 class="tit">
+                  We Provide Solution,
+                  Engineering & Management 
+                </h5>
+                <p class="sub-txt">
+                  피오에스메카는
+                  하드웨어, 소프트웨어 공급과 이에 따른 솔루션 컨설팅 
+                  및 IT개발 서비스 유지보수와 운영지원 서비스도 
+                  함께 제공하고 있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide" data-slide-type="img">
+              <img src="../static/images/main/img-banner2.png" alt="" />
+              <div class="banner-txt">
+                <h5 class="tit">
+                  We Provide Solution,<br />
+                  Engineering &amp; Management
+                </h5>
+                <p class="sub-tit">
+                  2023 ESG 우수 중소기업 선정
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <div class="inner"></div>
       </div>
       <!-- 상세 팝업 -->
@@ -45,9 +86,12 @@
     <!-- js -->
     <script src="../static/js/lib/jquery-3.7.1.min.js"></script>
     <script src="../static/js/lib/jquery-migrate-3.4.0.min.js"></script>
-    <script src="../static/js/lib/isotope.pkgd-3.0.6.min.js"></script>
-    <script src="../static/js/lib/packery-mode.pkgd-2.0.1.min.js"></script>
+    <script src="../static/js/lib/swiper-bundle.11.0.5.min.js"></script>
+    <script src="../static/js/lib/video.min.js"></script>
     <script src="../static/js/ui-common.js"></script>
-    <script></script>
+    <script>
+      // 실행 함수가 많아서 페이지 내에서 호출
+      mainUI()
+    </script>
   </body>
 </html>

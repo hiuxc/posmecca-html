@@ -1,6 +1,6 @@
 $(function () {
   commonUI();
-  mainUI();
+  // mainUI();
 });
 $(window).on('resize', function () {
   vhChk();
@@ -145,4 +145,84 @@ function commonUI() {
 }
 
 /* main ui */
-function mainUI() {}
+let $mainBanner;
+function mainUI() {
+  /* 메인 배너 스와이퍼(영상 제어 포함) - 시작 */
+  let videoPlayStatus = 'PAUSE';
+  let timeout = null;
+  let waiting = 3000; // swiper autoplay를 쓰지 못하기 때문에 따로 여기서 지정
+
+  const player = videojs('bannerVideo');
+  let swiperInitialized = false;
+
+  function initializeSwiper() {
+    if (swiperInitialized) return; // 초기화되었다면 다시 초기화 안함
+
+    $mainBanner = new Swiper('.main-banner', {
+      loop: true,
+      preventInteractionOnTransition: false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      on: {
+        init() {
+          clearTimeout(timeout);
+          player.currentTime(0);
+          player.play();
+          videoPlayStatus = 'PLAYING';
+        },
+        slideChangeTransitionStart() {
+          let index = $mainBanner.activeIndex;
+          let currentSlide = $($mainBanner.slides[index]);
+          let currentSlideType = currentSlide.data('slide-type');
+
+          if (videoPlayStatus === 'PLAYING') {
+            player.pause();
+          }
+
+          clearTimeout(timeout);
+
+          switch (currentSlideType) {
+            case 'img':
+              runNext();
+              break;
+            case 'vdo':
+              player.currentTime(0);
+              player.play();
+              videoPlayStatus = 'PLAYING';
+              break;
+            default:
+              throw new Error('Invalid slide type');
+          }
+        }
+      }
+    });
+
+    swiperInitialized = true; // Swiper 초기화
+  }
+  function handleVideoEnded() {
+    next();
+  }
+  // 비디오 플레이어 준비가 완료되면 실행될 함수
+  player.ready(function () {
+    initializeSwiper();
+    player.on('ended', handleVideoEnded);
+  });
+
+  function prev() {
+    $mainBanner.slidePrev();
+  }
+
+  function next() {
+    $mainBanner.slideNext();
+  }
+
+  function runNext() {
+    timeout = setTimeout(function () {
+      next();
+    }, waiting);
+  }
+  runNext();
+  /* 메인 배너 스와이퍼(영상 제어 포함) - 끝 */
+}

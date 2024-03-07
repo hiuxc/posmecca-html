@@ -1,0 +1,37 @@
+/* 메인 */
+.main-banner {
+  height: 100vh;
+  .swiper-slide {
+    position: relative;
+    .video-js {
+      width: 100%;
+      height: 100%;
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+      }
+    }
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // 배너 텍스트
+  .banner-txt {
+    max-width: 142rem;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $white-color;
+    position: absolute;
+    bottom: 20rem;
+    z-index: 2;
+  }
+}
