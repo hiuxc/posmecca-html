@@ -1,1 +1,56 @@
+@use 'sass:math';
+// 레퍼런스 페이지
+.reference-contents {
+  padding-top: 16rem;
+  padding-bottom: 20rem;
+  .unit {
+    font-family: 'Pretendard';
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    font-weight: 500;
+    .num {
+      margin: 0 0.5rem;
+    }
+  }
+  .brand-list {
+    margin-bottom: 3rem;
+    padding: 3rem 0;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: -vw(40);
+      row-gap: -vw(82);
+    }
+    .cell {
+      .cell-img {
+        margin-bottom: -vw(28);
+      }
+      img {
+        width: 100%;
+      }
+      .cell-txt {
+        font-family: 'Pretendard';
+        font-weight: 600;
+        font-size: min(2.8rem, -vw(28));
+        line-height: min(3.8rem, -vw(38));
+        p {
+          margin-top: -vw(10);
+          font-size: min(1.8rem, -vw(18));
+          font-weight: 500;
+          line-height: min(2.6rem, -vw(26));
+          color: #555;
+        }
+      }
+    }
+  }
+}
 
+/* ==========================================================================
+	Media Queries for Responsive Design. (미디어 쿼리 분기점)
+========================================================================== */
+/* tablet */
+@media only screen and (max-width: 1280px) {
+}
+/* mobile */
+@media only screen and (max-width: 1025px) {
+}
