@@ -15,11 +15,16 @@
     line-height: 2.6rem;
     color: #999;
   }
+  &.counting-num {
+    textarea {
+      padding-right: 7rem;
+    }
+  }
 }
 
 textarea {
   width: 100%;
-  height: 5.8rem;
+  height: 100%;
   padding: 1.6rem 4.4rem 1.6rem 2rem;
   border: 1px solid #ccc;
   border-radius: 0.2rem;
@@ -29,6 +34,7 @@ textarea {
   font-weight: 500;
   line-height: 2.6rem;
   font-family: 'Pretendard';
+  resize: none;
   &:disabled {
     border-color: #eee;
     background-color: #f6f6f6;
