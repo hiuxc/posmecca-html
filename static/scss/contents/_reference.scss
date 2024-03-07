@@ -52,5 +52,22 @@
 @media only screen and (max-width: 1280px) {
 }
 /* mobile */
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1024px) {
+  .reference-contents {
+    .brand-list {
+      ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cell {
+        .cell-txt {
+          font-size: min(2.8rem, -vw(28, 1280));
+          line-height: min(3.8rem, -vw(38, 1280));
+          p {
+            font-size: min(1.8rem, -vw(18, 1280));
+            line-height: min(2.6rem, -vw(26, 1280));
+          }
+        }
+      }
+    }
+  }
 }
