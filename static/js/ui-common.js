@@ -142,6 +142,24 @@ function commonUI() {
     handleWindowResize();
   });
   //window.addEventListener('resize', handleWindowResize), document.addEventListener('DOMContentLoaded', handleWindowResize);
+
+  /*폼 글자수*/
+  const textareas = document.querySelectorAll('textarea');
+  const countInput = document.querySelectorAll('input');
+
+  textareas.forEach((textarea) => {
+    textarea.addEventListener('input', valueLengthCheck);
+  });
+  countInput.forEach((inputs) => {
+    inputs.addEventListener('input', valueLengthCheck);
+  });
+
+  function valueLengthCheck(e) {
+    const target = e.target;
+    const value = target.value;
+    const el = target.parentNode.querySelector('.count-num');
+    el.querySelector('.current').innerHTML = value.length;
+  }
 }
 
 /* main ui */

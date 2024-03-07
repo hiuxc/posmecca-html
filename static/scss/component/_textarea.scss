@@ -5,6 +5,16 @@
       border-color: #ff1c37;
     }
   }
+  .count-num {
+    position: absolute;
+    right: 2rem;
+    bottom: 1.6rem;
+    font-family: 'Pretendard';
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.6rem;
+    color: #999;
+  }
 }
 
 textarea {
