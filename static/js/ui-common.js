@@ -150,7 +150,7 @@ function mainUI() {
   /* 메인 배너 스와이퍼(영상 제어 포함) - 시작 */
   let videoPlayStatus = 'PAUSE';
   let timeout = null;
-  let waiting = 1000;
+  let waiting = 3000; // swiper autoplay를 쓰지 못하기 때문에 따로 여기서 지정
 
   const player = videojs('bannerVideo');
   let swiperInitialized = false;
@@ -160,10 +160,6 @@ function mainUI() {
 
     $mainBanner = new Swiper('.main-banner', {
       loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false
-      },
       preventInteractionOnTransition: false,
       pagination: {
         el: '.swiper-pagination',
