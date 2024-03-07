@@ -135,6 +135,8 @@
 }
 #container {
   box-sizing: border-box;
+  letter-spacing: -0.02em;
+  overflow-x: hidden;
   .top-banner {
     height: 52rem;
     padding-top: 12rem;

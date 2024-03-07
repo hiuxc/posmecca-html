@@ -146,6 +146,7 @@ function commonUI() {
 
 /* main ui */
 let $mainBanner;
+let $mainReferences;
 function mainUI() {
   /* 메인 배너 스와이퍼(영상 제어 포함) - 시작 */
   let videoPlayStatus = 'PAUSE';
@@ -225,4 +226,10 @@ function mainUI() {
   }
   runNext();
   /* 메인 배너 스와이퍼(영상 제어 포함) - 끝 */
+
+  // 메인 레퍼런스 스와이퍼
+  $mainReferences = new Swiper('.main-references .swiper', {
+    slidesPerView: 'auto',
+    preventInteractionOnTransition: false
+  });
 }

@@ -33,5 +33,29 @@
     position: absolute;
     bottom: 20rem;
     z-index: 2;
+    .tit {
+      font-size: 5.4rem;
+      line-height: 8rem;
+      margin-bottom: 2.4rem;
+    }
+    .sub-txt {
+      font-size: 2.4rem;
+      font-weight: 500;
+    }
+    .sub-tit {
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+  }
+}
+.main-references {
+  .swiper {
+    overflow: visible;
+  }
+  .swiper-slide {
+    width: 44rem;
+    img {
+      width: 100%;
+    }
   }
 }
