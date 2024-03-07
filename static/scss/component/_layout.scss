@@ -45,6 +45,7 @@
       height: 2.4rem;
       right: 2rem;
       top: 2.8rem;
+      cursor: pointer;
       .gnb-current {
         font-size: 0;
         position: absolute;
@@ -351,6 +352,13 @@
     }
   }
 }
-
 @media only screen and (max-width: 750px) {
+}
+
+@media only screen and (max-width: 480px) {
+  #container {
+    .top-banner {
+      background-size: auto 32rem;
+    }
+  }
 }
