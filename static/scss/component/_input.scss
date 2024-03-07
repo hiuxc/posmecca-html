@@ -10,6 +10,12 @@
       display: block;
     }
   }
+
+  &.counting-num {
+    input {
+      padding-right: 7rem;
+    }
+  }
 }
 input {
   width: 100%;

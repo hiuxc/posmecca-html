@@ -105,18 +105,27 @@
                     <div class="row">
                       <div class="label req"><span>제목</span></div>
                       <div class="form">
-                        <div class="inputbox">
-                          <input type="text" placeholder="입력하세요" name="제목입력" />
-                          <button type="button" class="btn-x">글자초기화</button>
+                        <div class="inputbox counting-num">
+                          <input type="text" placeholder="입력하세요" maxlength="100" />
+                          <p class="count-num"><span class="current">0</span><span class="total">/100</span></p>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="label req"><span>내용</span></div>
                       <div class="form">
-                        <div class="inputbox counting-num">
-                          <textarea name="내용입력"></textarea>
-                          <p class="count-num"><span class="current">0</span><span class="total"> / 100</span></p>
+                        <div class="inputbox counting-num h-200">
+                          <textarea name="내용입력" placeholder="입력하세요" maxlength="100"></textarea>
+                          <p class="count-num"><span class="current">0</span><span class="total">/100</span></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="label req"><span>내용</span></div>
+                      <div class="form">
+                        <div class="inputbox">
+                          <input type="text" placeholder="입력하세요" />
                         </div>
                       </div>
                     </div>
