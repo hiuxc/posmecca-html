@@ -125,6 +125,15 @@
       }
     }
   }
+  .footnote {
+    margin-top: -vw(32);
+    padding-top: -vw(60);
+    margin-left: -vw(100);
+    border-top: 1px solid #ddd;
+    font-weight: 700;
+    font-size: min(4rem, -vw(40));
+    line-height: min(5.2rem, -vw(52));
+  }
 }
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
