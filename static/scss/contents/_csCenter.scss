@@ -1,1 +1,14 @@
+@use 'sass:math';
+// cs center 페이지
+.cs-contents {
+}
 
+/* ==========================================================================
+	Media Queries for Responsive Design. (미디어 쿼리 분기점)
+========================================================================== */
+/* tablet */
+@media only screen and (max-width: 1280px) {
+}
+/* mobile */
+@media only screen and (max-width: 1024px) {
+}
