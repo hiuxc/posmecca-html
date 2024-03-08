@@ -167,10 +167,21 @@ function commonUI() {
 
   $inpFocus.focusin(function () {
     $(this).siblings('.btn-x').show();
-    $(document).on('click', '.btn-x', function () {
-      const $inp = $(this).siblings('input', 'textarea');
-      $inp.val('').change().siblings('.btn-x').hide();
-    });
+  });
+
+  $(document).on('click', '.btn-x', function () {
+    const $inp = $(this).siblings('input', 'textarea');
+    $inp.val('').change().siblings('.btn-x').hide();
+  });
+
+  $inpFocus.focusout(function () {
+    const $btnX = $(this).siblings('.btn-x');
+
+    setTimeout(function () {
+      if (!$btnX.is(':focus')) {
+        $btnX.hide();
+      }
+    }, 100);
   });
 
   // 인풋 파일 파일명
