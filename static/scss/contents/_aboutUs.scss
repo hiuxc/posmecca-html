@@ -116,6 +116,124 @@
       line-height: min(2.8rem, -vw(28));
     }
   }
+
+  /* 찾아오시는 길 페이지*/
+  .address-box {
+    .location-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: -vw(49);
+      margin-bottom: -vw(60);
+      .list {
+        position: relative;
+        + .list::before {
+          content: '';
+          position: absolute;
+          top: -vw(4);
+          left: -vw(-24);
+          display: block;
+          width: -vw(1);
+          height: -vw(24);
+          background-color: #ddd;
+        }
+        &.active {
+          a {
+            color: $green-color;
+          }
+        }
+      }
+      a {
+        font-weight: 600;
+        font-size: min(2.4rem, -vw(24));
+        line-height: min(3.2rem, -vw(32));
+      }
+    }
+    .address {
+      margin-bottom: -vw(40);
+      font-family: 'Pretendard';
+      font-weight: 700;
+      font-size: min(3.6rem, -vw(36));
+      line-height: min(5.6rem, -vw(56));
+      text-align: center;
+    }
+    .company-map {
+      //카카오맵 설정시 스타일 수정
+      width: min(140rem, -vw(1400));
+      height: min(68rem, -vw(680));
+      margin: 0 auto;
+      background-color: #ddd;
+      border-radius: -vw(12);
+    }
+    .traffic-box {
+      display: flex;
+      align-items: stretch;
+      gap: -vw(120);
+      width: min(140rem, -vw(1400));
+      margin: 0 auto;
+      margin-top: -vw(20);
+      padding: -vw(54) -vw(60);
+      border: 1px solid #ddd;
+      border-radius: -vw(12);
+      .tit {
+        margin-bottom: -vw(20);
+        font-weight: 700;
+        font-size: min(2.2rem, -vw(22));
+        line-height: min(3.8rem, -vw(38));
+      }
+      .txt {
+        font-family: 'Pretendard';
+        font-weight: 500;
+        font-size: min(1.8rem, -vw(18));
+        line-height: min(2.6rem, -vw(26));
+        color: #555;
+        p + p {
+          margin-top: -vw(12);
+        }
+      }
+      .subway {
+        flex-shrink: 0;
+      }
+      .fc-blue {
+        color: #3a68cf;
+      }
+      .fc-gray {
+        color: #878d97;
+      }
+      .fc-red {
+        color: #e83323;
+      }
+      .fc-navy {
+        color: #4c5a71;
+      }
+      .bus {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -vw(-60);
+          display: block;
+          width: -vw(2);
+          height: -vw(140);
+          border-left: 1px dashed #ddd;
+        }
+        dl {
+          display: flex;
+          gap: -vw(8);
+          + dl {
+            margin-top: -vw(12);
+          }
+        }
+        dt {
+          font-weight: 700;
+        }
+        dd + dt {
+          margin-left: -vw(24);
+        }
+      }
+    }
+  }
 }
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)

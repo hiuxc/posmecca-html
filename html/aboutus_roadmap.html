@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POSMECCA</title>
+    <meta name="description" content="POSMECCA " />
+    <link rel="canonical" href="" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="POSMECCA" />
+    <meta property="og:description" content="POSMECCA" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="POSMECCA" />
+    <meta property="og:image" content="../static/img/ogp_image.png" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon/favicon.png" />
+    <link rel="apple-touch-icon" href="../static/img/favicon/touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/img/favicon/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/img/favicon/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="../static/img/favicon/touch-icon-ipad-retina.png" />
+    <link rel="manifest" href="../static/css/manifest.json" />
+    <!-- css -->
+    <link rel="stylesheet" href="../static/css/front.min.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- header -->
+      <script class="__include" src="./include/header.js"></script>
+      <!-- header end -->
+
+      <!-- container -->
+      <div id="container">
+        <!-- 
+          상세 공통 탑 영역
+          서비스 페이지 : bg-service
+          레퍼런스 페이지 : bg-reference
+          esg 페이지 : bg-esg
+          고객센터 : bg-csCenter
+          about us : bg-aboutUs
+        -->
+        <div class="top-banner bg-aboutUs">
+          <div class="txt-cont">
+            <h3>About us</h3>
+            <p>
+              피오에스메카는 최상의 서비스를 추구할 것이며, <br />
+              고객 중심으로 생각하는 회사가 되겠습니다
+            </p>
+          </div>
+        </div>
+        <!-- 탭 영역 -->
+        <div class="common-tab">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide active">
+                <a href="#">인사말</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">주요연혁</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">인증현황</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">찾아오시는 길</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- style 지우고 작업-->
+        <div class="inner">
+          <!-- sub 컨텐츠 영역-->
+          <div class="about-contents">
+            <div class="address-box">
+              <div class="location-tab">
+                <div class="list active" rel="seoul">
+                  <a href="#" role="button">서울본사</a>
+                </div>
+                <div class="list" rel="daejeon">
+                  <a href="#" role="button">대전지사</a>
+                </div>
+                <div class="list" rel="daegu">
+                  <a href="#" role="button">대구지사</a>
+                </div>
+                <div class="list" rel="gwangju">
+                  <a href="#" role="button">광주지사</a>
+                </div>
+                <div class="list" rel="busan">
+                  <a href="#" role="button">부산지사</a>
+                </div>
+              </div>
+              <div id="seoul" class="location-tab-contents tab-contents active">
+                <div class="address">서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호</div>
+                <div id="companyMap" class="company-map"></div>
+                <div class="traffic-box">
+                  <div class="subway">
+                    <div class="tit">지하철</div>
+                    <div class="txt">
+                      <p>1호선 독산역 1번 출구 (구로방면 버스 이용 5분 거리)</p>
+                      <p>1/7호선 가산디지털단지역 1번 출구 (안양방면 버스 이용 5분 거리)</p>
+                    </div>
+                  </div>
+                  <div class="bus">
+                    <div class="tit">버스</div>
+                    <div class="txt">
+                      <dl>
+                        <dt class="fc-green">초록</dt>
+                        <dd>2230, 5531, 5534, 5535, 5537, 5617, 5618, 5621, 5624, 5625, 5626, 5627, 5628, 5630, 5631, 5713, 6634, 6635</dd>
+                      </dl>
+                      <dl>
+                        <dt class="fc-blue">파랑</dt>
+                        <dd>150, 500, 505, 570</dd>
+                        <dt class="fc-gray">마을</dt>
+                        <dd>01, 03, 04, 08</dd>
+                        <dt class="fc-red">빨강</dt>
+                        <dd>5601</dd>
+                        <dt class="fc-navy">좌석</dt>
+                        <dd>900, 604</dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="daejeon" class="location-tab-contents tab-contents">
+                <div class="address">대전광역시 중구 성산로19번길 11 101호 (안영동)</div>
+                <div id="companyMap02" class="company-map"></div>
+              </div>
+              <div id="daegu" class="location-tab-contents tab-contents">
+                <div class="address">대구광역시 남구 현충로5길 75 1층 (대명동)</div>
+                <div id="companyMap03" class="company-map"></div>
+              </div>
+              <div id="gwangju" class="location-tab-contents tab-contents">
+                <div class="address">부산광역시 부산진구 거제대로60번길 15 매종해달별 802호 (양정동)</div>
+                <div id="companyMap04" class="company-map"></div>
+              </div>
+              <div id="busan" class="location-tab-contents tab-contents">
+                <div class="address">광주광역시 광산구 선운중앙로67번길 22 킹스빌 302호 (선암동)</div>
+                <div id="companyMap05" class="company-map"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 상세 팝업 -->
+
+      <!-- footer -->
+      <script class="__include" src="./include/footer.js"></script>
+      <!-- footer end -->
+    </div>
+
+    <!-- js -->
+    <script src="../static/js/lib/jquery-3.7.1.min.js"></script>
+    <script src="../static/js/lib/jquery-migrate-3.4.0.min.js"></script>
+    <script src="../static/js/lib/swiper-bundle.11.0.5.min.js"></script>
+    <script src="../static/js/ui-common.js"></script>
+
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a73b7b65c6c7c106ed03405e779cc645"></script> -->
+    <script>
+      //map
+      function kakakoMapInit(imgsrc, imgWidth, imgHeight) {
+        if (typeof kakao === 'undefined') return;
+        const mapContainer = document.getElementById('companyMap');
+        if (!mapContainer) return;
+        const mapLocation = {
+          x: 37.468937,
+          y: 126.8955968
+        };
+        const mapOptions = {
+          center: new kakao.maps.LatLng(mapLocation.x, mapLocation.y),
+          level: 3
+        };
+        const map = new kakao.maps.Map(mapContainer, mapOptions);
+
+        const imageSrc = imgsrc; // 마커이미지의 주소
+        let imageSize;
+        let imageOption;
+        if (window.innerWidth < 800) {
+          imageSize = new kakao.maps.Size(imgWidth / 2, imgHeight / 2); // 마커이미지의 크기
+          imageOption = {
+            offset: new kakao.maps.Point(imgWidth / 4, imgHeight / 2)
+          };
+        } else {
+          imageSize = new kakao.maps.Size(imgWidth, imgHeight); // 마커이미지의 크기
+          imageOption = {
+            offset: new kakao.maps.Point(imgWidth / 2, imgHeight)
+          };
+        }
+        const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+        const markerPosition = new kakao.maps.LatLng(mapLocation.x, mapLocation.y);
+        const marker = new kakao.maps.Marker({
+          position: markerPosition,
+          image: markerImage
+        });
+        marker.setMap(map);
+      }
+
+      // kakakoMapInit('../static/img/common/map_marker.png', 110, 128);
+    </script>
+  </body>
+</html>
