@@ -173,13 +173,38 @@ function commonUI() {
   // 인풋 value 초기화
   $('.btn-x').hide();
   const $inpFocus = $('.inputbox input');
-  $inpFocus.on('click', function () {
+
+  $inpFocus.focusin(function () {
     $(this).siblings('.btn-x').show();
   });
 
   $(document).on('click', '.btn-x', function () {
     const $inp = $(this).siblings('input', 'textarea');
     $inp.val('').change().siblings('.btn-x').hide();
+  });
+
+  $inpFocus.focusout(function () {
+    const $btnX = $(this).siblings('.btn-x');
+
+    setTimeout(function () {
+      if (!$btnX.is(':focus')) {
+        $btnX.hide();
+      }
+    }, 100);
+  });
+
+  // 인풋 파일 파일명
+  const fileTarget = $('.filebox .inp-file');
+
+  fileTarget.on('change', function () {
+    var files = $(this)[0].files;
+    var fileArr = [];
+    for (var i = 0; i < files.length; i++) {
+      fileArr.push(files[i].name);
+    }
+
+    var fileList = fileArr.join(', ');
+    $(this).siblings('.upload-name').val(fileList);
   });
 }
 

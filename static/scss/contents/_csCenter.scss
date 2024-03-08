@@ -138,54 +138,80 @@
   }
   // 폼 스타일
   .form-wrap {
-    width: min(120rem, -vw(1200));
+    width: -vw(1200);
     margin: 0 auto;
-    padding: -vw(60);
+    margin-bottom: 6rem;
+    padding: 6rem;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: -vw(12);
+    border-radius: 1.2rem;
     box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.04);
     .form-box + .form-box {
-      margin-top: -vw(60);
+      margin-top: 6rem;
     }
     .form-tit {
       display: flex;
-      align-items: baseline;
+      align-items: flex-end;
       justify-content: space-between;
-      padding-bottom: -vw(20);
+      padding-bottom: 2rem;
       border-bottom: 2px solid #222;
       .fc-red {
-        font-size: min(1.6rem, -vw(16));
+        font-size: 1.6rem;
         font-weight: 500;
-        line-height: min(1.9rem, -vw(19));
+        line-height: 1.9rem;
       }
       h6 {
         font-weight: 700;
-        font-size: min(2.2rem, -vw(22));
-        line-height: min(3.6rem, -vw(36));
+        font-size: 2.2rem;
+        line-height: 3.6rem;
       }
     }
     .row {
       display: grid;
       align-items: center;
       grid-template-columns: -vw(200) 1fr;
-      margin-top: -vw(20);
+      margin-top: 2rem;
       .inputbox {
         width: 100%;
       }
       .label {
-        font-size: min(1.8rem, -vw(18));
-        line-height: min(2.6rem, -vw(26));
+        font-size: 1.8rem;
+        line-height: 2.6rem;
         font-weight: 700;
         &.req {
           span:after {
             content: '*';
-            margin-left: -vw(4);
+            margin-left: 0.4rem;
             color: $red-color;
-            line-height: min(1.5rem, -vw(15));
+            line-height: 1.5rem;
             vertical-align: top;
           }
         }
+      }
+    }
+    &.signin {
+      width: 62rem;
+      .row {
+        display: flex;
+        &:first-child {
+          margin: 0;
+        }
+      }
+      .form {
+        flex: 1;
+      }
+      .btn-green {
+        width: 100%;
+      }
+      .info-box {
+        margin-top: 4rem;
+        padding-top: 4rem;
+        border-top: 1px solid #ddd;
+        color: #555;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        font-weight: 500;
+        word-break: break-all;
       }
     }
   }
