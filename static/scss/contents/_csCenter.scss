@@ -189,6 +189,31 @@
         }
       }
     }
+    &.signin {
+      width: 62rem;
+      .row {
+        display: flex;
+        &:first-child {
+          margin: 0;
+        }
+      }
+      .form {
+        flex: 1;
+      }
+      .btn-green {
+        width: 100%;
+      }
+      .info-box {
+        margin-top: 4rem;
+        padding-top: 4rem;
+        border-top: 1px solid #ddd;
+        color: #555;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        font-weight: 500;
+        word-break: break-all;
+      }
+    }
   }
 }
 
