@@ -164,16 +164,13 @@ function commonUI() {
   // 인풋 value 초기화
   $('.btn-x').hide();
   const $inpFocus = $('.inputbox input');
-  $inpFocus.on('click', function () {
-    $(this).siblings('.btn-x').show();
-    $(this).focusout(function () {
-      $(this).siblings('.btn-x').hide();
-    });
-  });
 
-  $(document).on('click', '.btn-x', function () {
-    const $inp = $(this).siblings('input', 'textarea');
-    $inp.val('').change().siblings('.btn-x').hide();
+  $inpFocus.focusin(function () {
+    $(this).siblings('.btn-x').show();
+    $(document).on('click', '.btn-x', function () {
+      const $inp = $(this).siblings('input', 'textarea');
+      $inp.val('').change().siblings('.btn-x').hide();
+    });
   });
 
   // 인풋 파일 파일명

@@ -155,14 +155,14 @@
       padding-bottom: -vw(20);
       border-bottom: 2px solid #222;
       .fc-red {
-        font-size: min(1.6rem, -vw(16));
+        font-size: 1.6rem;
         font-weight: 500;
-        line-height: min(1.9rem, -vw(19));
+        line-height: 1.9rem;
       }
       h6 {
         font-weight: 700;
-        font-size: min(2.2rem, -vw(22));
-        line-height: min(3.6rem, -vw(36));
+        font-size: 2.2rem;
+        line-height: 3.6rem;
       }
     }
     .row {
@@ -174,8 +174,8 @@
         width: 100%;
       }
       .label {
-        font-size: min(1.8rem, -vw(18));
-        line-height: min(2.6rem, -vw(26));
+        font-size: 1.8rem;
+        line-height: 2.6rem;
         font-weight: 700;
         &.req {
           span:after {
