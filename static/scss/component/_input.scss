@@ -50,7 +50,7 @@ input {
 }
 // 글자초기화 버튼
 .btn-x {
-  visibility: hidden;
+  display: none;
   position: absolute;
   top: 1.6rem;
   right: 2rem;
