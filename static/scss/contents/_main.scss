@@ -58,6 +58,17 @@
     .sub-tit {
       font-size: 3.2rem;
       font-weight: 700;
+      font-family: 'Pretendard GOV';
+    }
+    .btn-link {
+      font-size: 1.8rem;
+      margin-top: 1.3rem;
+      font-weight: 700;
+      line-height: 2.1rem;
+      padding: 1.2rem 2.1rem;
+      border-radius: 5rem;
+      display: inline-block;
+      border: 0.1rem solid #fff;
     }
   }
 }
@@ -181,13 +192,13 @@
     opacity: 0.3;
   }
   &.type-1 {
-    background-image: url('../../../static/images/main/img-mainContents-solustion-service01.png');
+    background-image: url('../../static/images/main/img-mainContents-solustion-service01.png');
   }
   &.type-2 {
-    background-image: url('../../../static/images/main/img-mainContents-solustion-service02.png');
+    background-image: url('../../static/images/main/img-mainContents-solustion-service02.png');
   }
   &.type-3 {
-    background-image: url('../../../static/images/main/img-mainContents-solustion-service03.png');
+    background-image: url('../../static/images/main/img-mainContents-solustion-service03.png');
   }
   .bottom-tit {
     position: absolute;

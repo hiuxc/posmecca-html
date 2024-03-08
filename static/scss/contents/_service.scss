@@ -166,7 +166,9 @@
       position: relative;
       width: -vw(1280);
       height: -vw(205);
-      margin: 0 auto;
+      margin: 0;
+      left: 50%;
+      transform: translateX(-50%);
       background: url(../images/service/bg-progress-arrow.png) no-repeat 0 0 / 100% 100%;
       ul {
         position: absolute;

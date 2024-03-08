@@ -40,7 +40,6 @@ function commonUI() {
 
   // GNB 모바일 메뉴
   const gnbBtn = document.querySelector('#gnb .btn-gnb');
-  const body = document.querySelector('body');
 
   gnbBtn.addEventListener('click', function (e) {
     e.stopPropagation();
@@ -121,9 +120,7 @@ function commonUI() {
   //공통 탭
   let $tabSwiper;
   function initTabSwiper() {
-    destroyTabSwiper(); // 리셋
-    console.log($('.common-tab .swiper .swiper-slide').length);
-    if ($('.common-tab .swiper .swiper-slide').length) {
+    if ($('.common-tab .swiper-slide').length) {
       $tabSwiper = new Swiper('.common-tab .swiper', {
         slidesPerView: 'auto'
       });
@@ -150,7 +147,29 @@ function commonUI() {
   $(window).on('resize', function () {
     handleWindowResize();
   });
-  //window.addEventListener('resize', handleWindowResize), document.addEventListener('DOMContentLoaded', handleWindowResize);
+
+  /* 스크롤 애니메이션 */
+  window.addEventListener('scroll', function () {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var windowHeight = window.innerHeight;
+    var scrollTopAnimation = document.querySelector('.scrollTopAnimation'); // 변경할 요소의 클래스를 여기에 넣으세요
+
+    if (scrollTopAnimation) {
+      var elementHeight = scrollTopAnimation.offsetHeight;
+      var elementOffsetTop = scrollTopAnimation.offsetTop;
+
+      var elementTopInView = elementOffsetTop - scrollTop;
+      var elementBottomInView = elementTopInView + elementHeight;
+
+      if (elementTopInView < windowHeight / 2 && elementBottomInView > windowHeight / 2) {
+        scrollTopAnimation.classList.add('yourClassName'); // 추가할 클래스명을 여기에 넣으세요
+        console.log(2);
+      } else {
+        scrollTopAnimation.classList.remove('yourClassName'); // 제거할 클래스명을 여기에 넣으세요
+        console.log(1);
+      }
+    }
+  });
 
   /*폼 글자수*/
   const textareas = document.querySelectorAll('textarea');
@@ -306,9 +325,11 @@ function mainUI() {
   const mainBottom = document.querySelector('.main-bottomContents');
   const bottomBtns = mainBottom.querySelectorAll('.bottomContents-btns a');
 
-  bottomBtns.forEach((bottomBtn) => {
+  bottomBtns.forEach((bottomBtn, i) => {
     bottomBtn.addEventListener('click', function (event) {
       event.preventDefault();
+
+      index = i;
       mainBottom.classList.remove('type-1', 'type-2', 'type-3');
       // 클릭한 <a> 태그의 data-bg 속성 값을 가져옴
       const dataBg = event.currentTarget.getAttribute('data-bg');
@@ -320,11 +341,31 @@ function mainUI() {
       bottomBtns.forEach((btn) => {
         const parentLi = btn.parentElement;
         parentLi.classList.remove('active');
-        console.log();
       });
 
       const clickedParentLi = event.currentTarget.parentElement;
       clickedParentLi.classList.add('active');
     });
+  });
+
+  // 5초마다 클릭 이벤트 발생
+  let index = 0;
+  setTimeout(() => {
+    index = 1;
+  }, 5000);
+  setInterval(() => {
+    bottomBtns[index].click();
+
+    index++;
+
+    // index가 마지막 요소를 넘어가면 초기화
+    if (index >= bottomBtns.length) {
+      index = 0;
+    }
+  }, 5000);
+
+  // 페이지를 벗어날 때 interval 정리
+  window.addEventListener('beforeunload', () => {
+    clearInterval(intervalId);
   });
 }
