@@ -138,21 +138,22 @@
   }
   // 폼 스타일
   .form-wrap {
-    width: min(120rem, -vw(1200));
+    width: -vw(1200);
     margin: 0 auto;
-    padding: -vw(60);
+    margin-bottom: 6rem;
+    padding: 6rem;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: -vw(12);
+    border-radius: 1.2rem;
     box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.04);
     .form-box + .form-box {
-      margin-top: -vw(60);
+      margin-top: 6rem;
     }
     .form-tit {
       display: flex;
-      align-items: baseline;
+      align-items: flex-end;
       justify-content: space-between;
-      padding-bottom: -vw(20);
+      padding-bottom: 2rem;
       border-bottom: 2px solid #222;
       .fc-red {
         font-size: 1.6rem;
@@ -169,7 +170,7 @@
       display: grid;
       align-items: center;
       grid-template-columns: -vw(200) 1fr;
-      margin-top: -vw(20);
+      margin-top: 2rem;
       .inputbox {
         width: 100%;
       }
@@ -180,9 +181,9 @@
         &.req {
           span:after {
             content: '*';
-            margin-left: -vw(4);
+            margin-left: 0.4rem;
             color: $red-color;
-            line-height: min(1.5rem, -vw(15));
+            line-height: 1.5rem;
             vertical-align: top;
           }
         }
