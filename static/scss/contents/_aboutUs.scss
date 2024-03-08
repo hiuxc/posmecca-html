@@ -3,6 +3,13 @@
 .about-contents {
   padding-top: -vw(160);
   padding-bottom: -vw(200);
+  .about-title {
+    margin-bottom: -vw(60);
+    font-weight: 700;
+    font-size: min(3.6rem, -vw(36));
+    line-height: min(5.6rem, -vw(56));
+    text-align: center;
+  }
   .greeting-box {
     width: -vw(1374);
     display: flex;
@@ -71,6 +78,44 @@
       }
     }
   }
+  .certific-box {
+    width: -vw(1400);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: -vw(40);
+    row-gap: -vw(80);
+    margin: 0 auto;
+    .cell {
+      position: relative;
+      text-align: center;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: -vw(280);
+        height: -vw(372);
+        border-radius: -vw(12);
+        background-color: rgba(0, 0, 0, 0.03);
+        z-index: 3;
+      }
+    }
+    img {
+      width: -vw(280);
+      margin-bottom: -vw(32);
+      border-radius: -vw(12);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.7rem 1.6rem rgba(0, 0, 0, 0.08), 0 3rem 3rem rgba(0, 0, 0, 0.04);
+    }
+    .name {
+      font-family: 'Pretendard';
+      font-weight: 600;
+      font-size: min(2rem, -vw(20));
+      line-height: min(2.8rem, -vw(28));
+    }
+  }
 }
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
@@ -80,4 +125,22 @@
 }
 /* mobile */
 @media only screen and (max-width: 1024px) {
+  .about-contents {
+    .certific-box {
+      grid-template-columns: repeat(3, 1fr);
+      img {
+        width: -vw(280, 1400);
+      }
+      .cell {
+        &::after {
+          width: -vw(280, 1400);
+          height: -vw(372, 1400);
+        }
+      }
+      .name {
+        font-size: min(2rem, -vw(20, 1400));
+        line-height: min(2.8rem, -vw(28, 1400));
+      }
+    }
+  }
 }
