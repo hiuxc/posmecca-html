@@ -172,6 +172,20 @@ function commonUI() {
     const $inp = $(this).siblings('input', 'textarea');
     $inp.val('').change().siblings('.btn-x').hide();
   });
+
+  // 인풋 파일 파일명
+  const fileTarget = $('.filebox .inp-file');
+
+  fileTarget.on('change', function () {
+    var files = $(this)[0].files;
+    var fileArr = [];
+    for (var i = 0; i < files.length; i++) {
+      fileArr.push(files[i].name);
+    }
+
+    var fileList = fileArr.join(', ');
+    $(this).siblings('.upload-name').val(fileList);
+  });
 }
 
 /* main ui */
