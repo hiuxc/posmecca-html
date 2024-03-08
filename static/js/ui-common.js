@@ -166,6 +166,9 @@ function commonUI() {
   const $inpFocus = $('.inputbox input');
   $inpFocus.on('click', function () {
     $(this).siblings('.btn-x').show();
+    $(this).focusout(function () {
+      $(this).siblings('.btn-x').hide();
+    });
   });
 
   $(document).on('click', '.btn-x', function () {
