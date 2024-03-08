@@ -50,6 +50,7 @@ function commonUI() {
   //스크롤 탑 버튼
   const $scrollTop = $('.scroll-top');
   const $scrollTopBtn = $scrollTop.children();
+
   $scrollTopBtn.on('click', function () {
     if ($('#wrapper').hasClass('main')) {
       scrollArea.animate({ scrollTop: 0 }, 800, function () {
@@ -57,6 +58,14 @@ function commonUI() {
       });
     } else {
       $('html, body').animate({ scrollTop: 0 }, 500);
+    }
+  });
+  $scrollTopBtn.hide();
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $scrollTopBtn.fadeIn();
+    } else {
+      $scrollTopBtn.fadeOut();
     }
   });
 
@@ -291,5 +300,31 @@ function mainUI() {
       disableOnInteraction: false
     },
     preventInteractionOnTransition: false
+  });
+
+  // 메인 하단 SOLUTIONS & SERVICE
+  const mainBottom = document.querySelector('.main-bottomContents');
+  const bottomBtns = mainBottom.querySelectorAll('.bottomContents-btns a');
+
+  bottomBtns.forEach((bottomBtn) => {
+    bottomBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      mainBottom.classList.remove('type-1', 'type-2', 'type-3');
+      // 클릭한 <a> 태그의 data-bg 속성 값을 가져옴
+      const dataBg = event.currentTarget.getAttribute('data-bg');
+
+      // $mainBottom에 data-bg 속성 값을 클래스로 추가
+      if (dataBg) {
+        mainBottom.classList.add(dataBg);
+      }
+      bottomBtns.forEach((btn) => {
+        const parentLi = btn.parentElement;
+        parentLi.classList.remove('active');
+        console.log();
+      });
+
+      const clickedParentLi = event.currentTarget.parentElement;
+      clickedParentLi.classList.add('active');
+    });
   });
 }
