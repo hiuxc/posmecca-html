@@ -230,6 +230,7 @@ function commonUI() {
 /* main ui */
 let $mainBanner;
 let $mainReferences;
+let activeBullet;
 function mainUI() {
   /* 메인 배너 스와이퍼(영상 제어 포함) - 시작 */
   let videoPlayStatus = 'PAUSE';
@@ -237,6 +238,7 @@ function mainUI() {
   let waiting = 3000; // swiper autoplay를 쓰지 못하기 때문에 따로 여기서 지정
 
   const player = videojs('bannerVideo');
+
   let swiperInitialized = false;
 
   function initializeSwiper() {
@@ -247,7 +249,10 @@ function mainUI() {
       preventInteractionOnTransition: false,
       pagination: {
         el: '.swiper-pagination',
-        clickable: true
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">0' + (index + 1) + '<strong class="progressbar "><i class="progress"></i></strong>' + '</span>';
+        }
       },
       on: {
         init() {
@@ -255,11 +260,19 @@ function mainUI() {
           player.currentTime(0);
           player.play();
           videoPlayStatus = 'PLAYING';
+
+          // 1초 후에 진행 표시줄을 100%로 설정
+          const activeBullet = document.querySelector('.swiper-pagination-bullet-active .progress');
+          setTimeout(function () {
+            activeBullet.style.width = '100%';
+          }, 1);
         },
         slideChangeTransitionStart() {
           let index = $mainBanner.activeIndex;
           let currentSlide = $($mainBanner.slides[index]);
           let currentSlideType = currentSlide.data('slide-type');
+          const activeBullet = document.querySelector('.swiper-pagination-bullet-active .progress');
+          activeBullet.style.width = '0%';
 
           if (videoPlayStatus === 'PLAYING') {
             player.pause();
@@ -279,6 +292,11 @@ function mainUI() {
             default:
               throw new Error('Invalid slide type');
           }
+        },
+        slideChangeTransitionEnd() {
+          // 1초 후에 진행 표시줄을 100%로 설정
+          const activeBullet = document.querySelector('.swiper-pagination-bullet-active .progress');
+          activeBullet.style.width = '100%';
         }
       }
     });

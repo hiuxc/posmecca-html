@@ -38,7 +38,8 @@
   }
   // 배너 텍스트
   .banner-txt {
-    max-width: 142rem;
+    max-width: 144rem;
+    padding: 0 2rem;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -69,6 +70,62 @@
       border-radius: 5rem;
       display: inline-block;
       border: 0.1rem solid #fff;
+    }
+  }
+  .swiper-pagination {
+    max-width: 140rem;
+    text-align: left;
+    left: 50%;
+    bottom: 12rem;
+    transform: translateX(-50%);
+    .progressbar {
+      display: none;
+      width: 15.6rem;
+      height: 0.2rem;
+      margin: 0 0.6rem;
+      position: relative;
+      top: 0.2rem;
+      background-color: rgba(255, 255, 255, 0.35);
+      .progress {
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        transition: width linear;
+      }
+    }
+    .swiper-pagination-bullet {
+      width: auto;
+      height: auto;
+      background: none;
+      color: #fff;
+      border-radius: 0;
+      display: inline-flex;
+      align-items: center;
+      opacity: 0.8;
+      &:nth-child(1) {
+        .progressbar {
+          .progress {
+            transition-duration: 40.5s;
+          }
+        }
+      }
+      &:nth-child(2) {
+        .progressbar {
+          .progress {
+            transition-duration: 2.5s;
+          }
+        }
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      .progressbar {
+        display: block;
+      }
     }
   }
 }
