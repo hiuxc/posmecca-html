@@ -260,5 +260,13 @@
         line-height: min(2.8rem, -vw(28, 1400));
       }
     }
+    .address-box {
+      .location-tab {
+        .list + .list::before {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
   }
 }
