@@ -72,12 +72,23 @@
       border: 0.1rem solid #fff;
     }
   }
-  .swiper-pagination {
+  .pagination-wrap {
     max-width: 140rem;
     text-align: left;
     left: 50%;
+    position: absolute;
     bottom: 12rem;
     transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    .swiper-pagination {
+      display: inline-block;
+      position: relative;
+      width: auto;
+      top: 0;
+    }
     .progressbar {
       display: none;
       width: 15.6rem;
@@ -120,12 +131,28 @@
         }
       }
     }
-
     .swiper-pagination-bullet-active {
       opacity: 1;
       .progressbar {
         display: block;
       }
+    }
+  }
+  .swiper-control {
+    position: relative;
+    width: 2rem;
+    top: 0.1rem;
+    height: 2rem;
+    box-sizing: border-box;
+    margin-left: 0.6rem;
+    background-size: 2rem auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Crect x='5.5' y='4' width='3' height='12' rx='1' fill='white'/%3E%3Crect x='11.5' y='4' width='3' height='12' rx='1' fill='white'/%3E%3C/svg%3E");
+  }
+  &.pause {
+    .swiper-control {
+      border: 0.1rem solid red;
     }
   }
 }

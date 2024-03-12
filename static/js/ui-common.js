@@ -236,7 +236,7 @@ function mainUI() {
   let videoPlayStatus = 'PAUSE';
   let timeout = null;
   let waiting = 3000; // swiper autoplay를 쓰지 못하기 때문에 따로 여기서 지정
-
+  const swiperBanner = document.querySelector('.main-banner');
   const player = videojs('bannerVideo');
 
   let swiperInitialized = false;
@@ -261,11 +261,10 @@ function mainUI() {
           player.play();
           videoPlayStatus = 'PLAYING';
 
-          // 1초 후에 진행 표시줄을 100%로 설정
           const activeBullet = document.querySelector('.swiper-pagination-bullet-active .progress');
           setTimeout(function () {
             activeBullet.style.width = '100%';
-          }, 1);
+          }, 100);
         },
         slideChangeTransitionStart() {
           let index = $mainBanner.activeIndex;
@@ -294,7 +293,6 @@ function mainUI() {
           }
         },
         slideChangeTransitionEnd() {
-          // 1초 후에 진행 표시줄을 100%로 설정
           const activeBullet = document.querySelector('.swiper-pagination-bullet-active .progress');
           activeBullet.style.width = '100%';
         }
@@ -317,7 +315,10 @@ function mainUI() {
   }
 
   function next() {
-    $mainBanner.slideNext();
+    // $mainBanner.slideNext();
+    if (!swiperBanner.classList.contains('pause')) {
+      $mainBanner.slideNext();
+    }
   }
 
   function runNext() {
@@ -326,6 +327,14 @@ function mainUI() {
     }, waiting);
   }
   runNext();
+
+  const controlSwiper = document.querySelector('.swiper-control');
+  controlSwiper.addEventListener('click', function () {
+    swiperBanner.classList.toggle('pause');
+    if (!swiperBanner.classList.contains('pause')) {
+      $mainBanner.slideNext();
+    }
+  });
   /* 메인 배너 스와이퍼(영상 제어 포함) - 끝 */
 
   // 메인 레퍼런스 스와이퍼
