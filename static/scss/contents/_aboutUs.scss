@@ -166,7 +166,7 @@
       border-radius: -vw(12);
     }
     .traffic-box {
-      display: flex;
+      display: none;
       align-items: stretch;
       gap: -vw(120);
       width: min(140rem, -vw(1400));
@@ -231,6 +231,11 @@
         dd + dt {
           margin-left: -vw(24);
         }
+      }
+    }
+    &.seoul {
+      .traffic-box {
+        display: flex;
       }
     }
   }

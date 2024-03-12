@@ -191,7 +191,7 @@
   height: 9rem;
   background-repeat: repeat-x;
   background-size: 135rem 9rem;
-  background-image: url('../../../static/images/main/img-main-clientList.png');
+  background-image: url('../../static/images/main/img-main-clientList.png');
   background-position: center;
   animation: bg-scrolling-reverse 10s linear infinite;
   margin-bottom: 18rem;
@@ -227,17 +227,17 @@
       }
       &.value-1 {
         &::before {
-          background-image: url('../../../static/images/main/img-company-value1.png');
+          background-image: url('../../static/images/main/img-company-value1.png');
         }
       }
       &.value-2 {
         &::before {
-          background-image: url('../../../static/images/main/img-company-value2.png');
+          background-image: url('../../static/images/main/img-company-value2.png');
         }
       }
       &.value-3 {
         &::before {
-          background-image: url('../../../static/images/main/img-company-value3.png');
+          background-image: url('../../static/images/main/img-company-value3.png');
         }
       }
       .value-tit {

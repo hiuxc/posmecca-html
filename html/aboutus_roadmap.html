@@ -72,22 +72,22 @@
         <div class="inner">
           <!-- sub 컨텐츠 영역-->
           <div class="about-contents">
-            <div class="address-box">
+            <div class="address-box seoul">
               <div class="location-tab">
-                <div class="list active" rel="seoul">
-                  <a href="#" role="button">서울본사</a>
+                <div class="list active">
+                  <a href="#" role="button" rel="seoul">서울본사</a>
                 </div>
-                <div class="list" rel="daejeon">
-                  <a href="#" role="button">대전지사</a>
+                <div class="list">
+                  <a href="#" role="button" rel="daejeon">대전지사</a>
                 </div>
-                <div class="list" rel="daegu">
-                  <a href="#" role="button">대구지사</a>
+                <div class="list">
+                  <a href="#" role="button" rel="daegu">대구지사</a>
                 </div>
-                <div class="list" rel="gwangju">
-                  <a href="#" role="button">광주지사</a>
+                <div class="list">
+                  <a href="#" role="button" rel="gwangju">광주지사</a>
                 </div>
-                <div class="list" rel="busan">
-                  <a href="#" role="button">부산지사</a>
+                <div class="list">
+                  <a href="#" role="button" rel="busan">부산지사</a>
                 </div>
               </div>
               <div id="seoul" class="location-tab-contents tab-contents active">
@@ -122,22 +122,6 @@
                   </div>
                 </div>
               </div>
-              <div id="daejeon" class="location-tab-contents tab-contents">
-                <div class="address">대전광역시 중구 성산로19번길 11 101호 (안영동)</div>
-                <div id="companyMap02" class="company-map"></div>
-              </div>
-              <div id="daegu" class="location-tab-contents tab-contents">
-                <div class="address">대구광역시 남구 현충로5길 75 1층 (대명동)</div>
-                <div id="companyMap03" class="company-map"></div>
-              </div>
-              <div id="gwangju" class="location-tab-contents tab-contents">
-                <div class="address">부산광역시 부산진구 거제대로60번길 15 매종해달별 802호 (양정동)</div>
-                <div id="companyMap04" class="company-map"></div>
-              </div>
-              <div id="busan" class="location-tab-contents tab-contents">
-                <div class="address">광주광역시 광산구 선운중앙로67번길 22 킹스빌 302호 (선암동)</div>
-                <div id="companyMap05" class="company-map"></div>
-              </div>
             </div>
           </div>
         </div>
@@ -150,52 +134,15 @@
     </div>
 
     <!-- js -->
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b68c24c25e60db3751d39093ed1072f0&libraries=services"></script>
     <script src="../static/js/lib/jquery-3.7.1.min.js"></script>
     <script src="../static/js/lib/jquery-migrate-3.4.0.min.js"></script>
     <script src="../static/js/lib/swiper-bundle.11.0.5.min.js"></script>
     <script src="../static/js/ui-common.js"></script>
 
-    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a73b7b65c6c7c106ed03405e779cc645"></script> -->
     <script>
-      //map
-      function kakakoMapInit(imgsrc, imgWidth, imgHeight) {
-        if (typeof kakao === 'undefined') return;
-        const mapContainer = document.getElementById('companyMap');
-        if (!mapContainer) return;
-        const mapLocation = {
-          x: 37.468937,
-          y: 126.8955968
-        };
-        const mapOptions = {
-          center: new kakao.maps.LatLng(mapLocation.x, mapLocation.y),
-          level: 3
-        };
-        const map = new kakao.maps.Map(mapContainer, mapOptions);
-
-        const imageSrc = imgsrc; // 마커이미지의 주소
-        let imageSize;
-        let imageOption;
-        if (window.innerWidth < 800) {
-          imageSize = new kakao.maps.Size(imgWidth / 2, imgHeight / 2); // 마커이미지의 크기
-          imageOption = {
-            offset: new kakao.maps.Point(imgWidth / 4, imgHeight / 2)
-          };
-        } else {
-          imageSize = new kakao.maps.Size(imgWidth, imgHeight); // 마커이미지의 크기
-          imageOption = {
-            offset: new kakao.maps.Point(imgWidth / 2, imgHeight)
-          };
-        }
-        const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-        const markerPosition = new kakao.maps.LatLng(mapLocation.x, mapLocation.y);
-        const marker = new kakao.maps.Marker({
-          position: markerPosition,
-          image: markerImage
-        });
-        marker.setMap(map);
-      }
-
-      // kakakoMapInit('../static/img/common/map_marker.png', 110, 128);
+      aboutUi();
+      kakakoMapInit();
     </script>
   </body>
 </html>

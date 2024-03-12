@@ -117,7 +117,7 @@ function commonUI() {
     return { left: $elX, top: $elY };
   }
 
-  //공통 탭
+  //공통 서브 메뉴 탭
   let $tabSwiper;
   function initTabSwiper() {
     if ($('.common-tab .swiper-slide').length) {
@@ -394,5 +394,93 @@ function mainUI() {
   // 페이지를 벗어날 때 interval 정리
   window.addEventListener('beforeunload', () => {
     clearInterval(intervalId);
+  });
+}
+
+/* about ui */
+function aboutUi() {
+  const addressBox = document.querySelector('.address-box');
+  const addressTabBtn = document.querySelectorAll('.location-tab .list a');
+  addressTabBtn.forEach(function (tab) {
+    tab.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parentLi = e.target.closest('.list');
+      const relValue = tab.getAttribute('rel');
+
+      const addressTxt = document.querySelector('.location-tab-contents > .address');
+
+      addressBox.className = 'address-box'; // 주소 리셋
+      addressBox.classList.add(relValue); // 클릭한 주소 클래스 추가
+
+      addressTxt.textContent = '';
+
+      switch (relValue) {
+        case 'seoul':
+          addressTxt.textContent = '서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호';
+          break;
+        case 'busan':
+          addressTxt.textContent = '부산광역시 부산진구 거제대로60번길 15 매종해달별 802호 (양정동)';
+          break;
+        case 'daejeon':
+          addressTxt.textContent = '대전광역시 중구 성산로19번길 11 101호 (안영동)';
+          break;
+        case 'daegu':
+          addressTxt.textContent = '대구광역시 남구 현충로5길 75 1층 (대명동)';
+          break;
+        case 'gwangju':
+          addressTxt.textContent = '광주광역시 광산구 선운중앙로67번길 22 킹스빌 302호 (선암동)';
+          break;
+        default:
+          addressTxt.textContent = '서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호';
+      }
+
+      document.querySelectorAll('.location-tab .list').forEach((div) => {
+        div.classList.remove('active');
+      });
+
+      if (parentLi) {
+        parentLi.classList.add('active');
+      }
+    });
+  });
+}
+
+//map
+function kakakoMapInit() {
+  var mapContainer = document.getElementById('companyMap'), // 지도를 표시할 div
+    mapOption = {
+      center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+      level: 3 // 지도의 확대 레벨
+    };
+
+  // 지도를 생성합니다
+  var map = new kakao.maps.Map(mapContainer, mapOption);
+
+  // 주소-좌표 변환 객체를 생성합니다
+  var geocoder = new kakao.maps.services.Geocoder();
+
+  let addressVar = '서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호';
+
+  // 주소로 좌표를 검색합니다
+  geocoder.addressSearch(addressVar, function (result, status) {
+    // 정상적으로 검색이 완료됐으면
+    if (status === kakao.maps.services.Status.OK) {
+      var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+      // 결과값으로 받은 위치를 마커로 표시합니다
+      var marker = new kakao.maps.Marker({
+        map: map,
+        position: coords
+      });
+
+      // 인포윈도우로 장소에 대한 설명을 표시합니다
+      var infowindow = new kakao.maps.InfoWindow({
+        content: '<div style="width:150px;text-align:center;padding:6px 0;">POSMECCA</div>'
+      });
+      infowindow.open(map, marker);
+
+      // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+      map.setCenter(coords);
+    }
   });
 }
