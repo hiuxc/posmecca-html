@@ -53,6 +53,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: -vw(40);
+    overflow: hidden;
     .card {
       display: flex;
       flex-direction: column;

@@ -1,5 +1,6 @@
 //공통
 @use 'sass:math';
+@import url(./lib/animated.4.1.1.css);
 @import url(./lib/video-js.min.css);
 @import url(./lib/swiper-bundle.11.0.5.min.css);
 
@@ -462,5 +463,15 @@ body {
   }
   .pr-#{$i*5 + 100} {
     padding-right: $i * 0.5rem + 10rem !important;
+  }
+}
+
+/* animation */
+.ani-ready {
+  opacity: 0;
+}
+@for $i from 1 through 10 {
+  .ani-delay-#{$i} {
+    animation-delay: 0.3s * $i;
   }
 }

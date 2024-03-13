@@ -148,29 +148,6 @@ function commonUI() {
     handleWindowResize();
   });
 
-  /* 스크롤 애니메이션 */
-  window.addEventListener('scroll', function () {
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
-    var windowHeight = window.innerHeight;
-    var scrollTopAnimation = document.querySelector('.scrollTopAnimation'); // 변경할 요소의 클래스를 여기에 넣으세요
-
-    if (scrollTopAnimation) {
-      var elementHeight = scrollTopAnimation.offsetHeight;
-      var elementOffsetTop = scrollTopAnimation.offsetTop;
-
-      var elementTopInView = elementOffsetTop - scrollTop;
-      var elementBottomInView = elementTopInView + elementHeight;
-
-      if (elementTopInView < windowHeight / 2 && elementBottomInView > windowHeight / 2) {
-        scrollTopAnimation.classList.add('yourClassName'); // 추가할 클래스명을 여기에 넣으세요
-        console.log(2);
-      } else {
-        scrollTopAnimation.classList.remove('yourClassName'); // 제거할 클래스명을 여기에 넣으세요
-        console.log(1);
-      }
-    }
-  });
-
   /*폼 글자수*/
   const textareas = document.querySelectorAll('textarea');
   const countInput = document.querySelectorAll('input');
@@ -224,6 +201,33 @@ function commonUI() {
 
     var fileList = fileArr.join(', ');
     $(this).siblings('.upload-name').val(fileList);
+  });
+
+  // 스크롤 이벤트 리스너를 추가합니다.
+  const aniElements = document.querySelectorAll('[data-animation]');
+  aniElements.forEach(function (element) {
+    element.classList.add('ani-ready');
+  });
+
+  window.addEventListener('scroll', function () {
+    // 'data-animation' 속성을 가진 모든 요소를 선택합니다.
+    const elements = document.querySelectorAll('[data-animation]');
+
+    elements.forEach(function (element) {
+      // 각 요소의 위치 정보를 가져옵니다.
+
+      let position = element.getBoundingClientRect();
+      let screenMiddle = window.innerHeight / 2;
+      let animationClass = element.getAttribute('data-animation');
+      // element.classList.add('animated');
+
+      if (position.top + position.height / 3 < screenMiddle) {
+        element.classList.remove('ani-ready');
+        element.classList.add('animate__animated');
+
+        element.classList.add(animationClass);
+      }
+    });
   });
 }
 
