@@ -235,7 +235,7 @@ function mainUI() {
   /* 메인 배너 스와이퍼(영상 제어 포함) - 시작 */
   let videoPlayStatus = 'PAUSE';
   let timeout = null;
-  let waiting = 3000; // swiper autoplay를 쓰지 못하기 때문에 따로 여기서 지정
+  let waiting = 5000; // swiper autoplay를 쓰지 못하기 때문에 따로 여기서 지정
   const swiperBanner = document.querySelector('.main-banner');
   const player = videojs('bannerVideo');
 
@@ -253,6 +253,10 @@ function mainUI() {
         renderBullet: function (index, className) {
           return '<span class="' + className + '">0' + (index + 1) + '<strong class="progressbar "><i class="progress"></i></strong>' + '</span>';
         }
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       },
       on: {
         init() {

@@ -73,7 +73,8 @@
     }
   }
   .pagination-wrap {
-    max-width: 140rem;
+    max-width: 144rem;
+    padding: 0 2rem;
     text-align: left;
     left: 50%;
     position: absolute;
@@ -116,17 +117,21 @@
       display: inline-flex;
       align-items: center;
       opacity: 0.8;
+      //1 번 슬라이드
       &:nth-child(1) {
         .progressbar {
           .progress {
+            // 영상 길이가 41초
             transition-duration: 40.5s;
           }
         }
       }
+      //2 번 슬라이드
       &:nth-child(2) {
         .progressbar {
           .progress {
-            transition-duration: 2.5s;
+            // 5초 뒤에 슬라이드 이동
+            transition-duration: 4.5s;
           }
         }
       }
@@ -152,7 +157,41 @@
   }
   &.pause {
     .swiper-control {
-      border: 0.1rem solid red;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M15.6174 9.14852C16.2515 9.53906 16.2515 10.4609 15.6174 10.8515L7.27438 15.9894C6.60812 16.3997 5.75 15.9204 5.75 15.1379L5.75 4.86205C5.75 4.07959 6.60812 3.60026 7.27438 4.01057L15.6174 9.14852Z' fill='white'/%3E%3C/svg%3E");
+    }
+  }
+  .swiper-navigation {
+    font-size: 0;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 9rem;
+      height: 9rem;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.2);
+      background-size: 2rem 1.6rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: 0.3s background ease-in;
+      &:hover {
+        background-color: rgba($color: #000000, $alpha: 1);
+      }
+      &:after {
+        content: none;
+      }
+    }
+    .swiper-button-prev {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 20 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.70711 0.292893C9.09763 0.683417 9.09763 1.31658 8.70711 1.70711L3.41421 7L19 7C19.5523 7 20 7.44771 20 8C20 8.55228 19.5523 9 19 9H3.41421L8.70711 14.2929C9.09763 14.6834 9.09763 15.3166 8.70711 15.7071C8.31658 16.0976 7.68342 16.0976 7.29289 15.7071L0.292893 8.70711C-0.0976311 8.31658 -0.0976311 7.68342 0.292893 7.29289L7.29289 0.292893C7.68342 -0.0976311 8.31658 -0.0976311 8.70711 0.292893Z' fill='white'/%3E%3C/svg%3E");
+    }
+    .swiper-button-next {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 20 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.2929 15.7071C10.9024 15.3166 10.9024 14.6834 11.2929 14.2929L16.5858 9L1 9C0.447716 9 6.511e-07 8.55228 6.99382e-07 8C7.47664e-07 7.44771 0.447717 7 1 7L16.5858 7L11.2929 1.70711C10.9024 1.31658 10.9024 0.683417 11.2929 0.292893C11.6834 -0.0976322 12.3166 -0.0976321 12.7071 0.292893L19.7071 7.29289C20.0976 7.68342 20.0976 8.31658 19.7071 8.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071Z' fill='white'/%3E%3C/svg%3E");
     }
   }
 }
