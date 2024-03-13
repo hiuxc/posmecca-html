@@ -253,7 +253,7 @@ function mainUI() {
       preventInteractionOnTransition: false,
       pagination: {
         el: '.swiper-pagination',
-        clickable: true,
+        // clickable: true,
         renderBullet: function (index, className) {
           return '<span class="' + className + '">0' + (index + 1) + '<strong class="progressbar "><i class="progress"></i></strong>' + '</span>';
         }
@@ -270,6 +270,7 @@ function mainUI() {
           videoPlayStatus = 'PLAYING';
 
           const activeBullet = document.querySelector('.swiper-pagination-bullet-active .progress');
+          activeBullet.style.width = '0%';
           setTimeout(function () {
             activeBullet.style.width = '100%';
           }, 100);
