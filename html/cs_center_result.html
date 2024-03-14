@@ -56,11 +56,8 @@
               <div class="swiper-slide">
                 <a href="cs_center_info.html">이용안내</a>
               </div>
-              <div class="swiper-slide">
-                <a href="cs_center_report.html">제보하기</a>
-              </div>
               <div class="swiper-slide active">
-                <a href="cs_center_result.html">처리결과 확인</a>
+                <a href="cs_center_result.html">고객문의</a>
               </div>
             </div>
           </div>
@@ -70,39 +67,65 @@
           <!-- sub 컨텐츠 영역-->
           <div class="cs-contents">
             <form action="">
-              <div class="form-wrap signin">
+              <div class="form-wrap">
                 <div class="form-box">
+                  <div class="form-tit">
+                    <h6>문의 내용</h6>
+                    <div class="fc-red">* 필수항목</div>
+                  </div>
                   <div class="form-body">
                     <div class="row">
+                      <div class="label req"><span>제목</span></div>
                       <div class="form">
-                        <!-- error시 inputbox에 .error 클래스 -->
-                        <div class="inputbox">
-                          <input type="text" placeholder="제보자 확인 아이디" name="제보자 확인 아이디 입력" />
-                          <button type="button" class="btn-x">글자초기화</button>
-                          <div class="txt-error">입력정보를 확인해주세요</div>
+                        <div class="inputbox counting-num">
+                          <input type="text" placeholder="입력하세요" maxlength="100" />
+                          <p class="count-num"><span class="current">0</span><span class="total">/100</span></p>
                         </div>
                       </div>
                     </div>
                     <div class="row">
+                      <div class="label req"><span>내용</span></div>
                       <div class="form">
-                        <!-- error시 inputbox에 .error 클래스 -->
-                        <div class="inputbox">
-                          <input type="password" placeholder="비밀번호" name="비밀번호 입력" />
-                          <button type="button" class="btn-x">글자초기화</button>
-                          <div class="txt-error">입력정보를 확인해주세요</div>
+                        <div class="inputbox counting-num h-240">
+                          <textarea name="내용입력" placeholder="입력하세요" maxlength="100"></textarea>
+                          <p class="count-num"><span class="current">0</span><span class="total">/100</span></p>
                         </div>
                       </div>
                     </div>
                     <div class="row">
+                      <div class="label"><span>첨부자료</span></div>
                       <div class="form">
-                        <button type="button" class="btn btn-green">로그인</button>
+                        <div class="filebox">
+                          <input class="upload-name" placeholder="입력하세요" />
+                          <label for="file" class="btn btn-gray small">파일선택</label>
+                          <input type="file" id="file" class="inp-file" />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="info-box">
-                  <p>입력하신 아이디, 비밀번호는 제보 확인용으로 사용되며 별도의 찾기 기능을 제공하지 않으므로 유의해 주시기 바랍니다.</p>
+                <div class="form-box">
+                  <div class="form-tit">
+                    <h6>문의 답변</h6>
+                    <div class="fc-red">* 필수항목</div>
+                  </div>
+                  <div class="form-body">
+                    <div class="row">
+                      <div class="label req"><span>답변 받을 이메일</span></div>
+                      <div class="form">
+                        <div class="inputbox">
+                          <input type="text" placeholder="입력하세요" name="부서입력" />
+                          <button type="button" class="btn-x">글자초기화</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              <div class="btn-bottom-box">
+                <button type="button" class="btn">취소</button>
+                <button type="button" class="btn btn-green">등록</button>
               </div>
             </form>
           </div>

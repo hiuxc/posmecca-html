@@ -3,6 +3,36 @@
 .cs-contents {
   padding-top: -vw(160);
   padding-bottom: -vw(200);
+  .sub-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: -vw(49);
+    margin-bottom: -vw(60);
+    .list {
+      position: relative;
+      + .list::before {
+        content: '';
+        position: absolute;
+        top: -vw(4);
+        left: -vw(-24);
+        display: block;
+        width: -vw(1);
+        height: -vw(24);
+        background-color: #ddd;
+      }
+      &.active {
+        a {
+          color: $green-color;
+        }
+      }
+    }
+    a {
+      font-weight: 600;
+      font-size: min(2.4rem, -vw(24));
+      line-height: min(3.2rem, -vw(32));
+    }
+  }
   .tit-box {
     margin-bottom: -vw(60);
     font-size: min(4rem, -vw(40));
@@ -11,6 +41,7 @@
     text-align: center;
   }
   .subscript {
+    margin-top: -vw(60);
     font-size: min(2.2rem, -vw(22));
     line-height: min(3.6rem, -vw(36));
     font-weight: 500;
@@ -226,4 +257,131 @@
 }
 /* mobile */
 @media only screen and (max-width: 1024px) {
+  .cs-contents {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    .sub-tab {
+      gap: 3.3rem;
+      margin-bottom: 8rem;
+      a {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+      }
+      .list + .list::before {
+        left: -1.6rem;
+        top: 0.3rem;
+        width: 1px;
+        height: 2rem;
+      }
+    }
+    .tit-box {
+      margin-bottom: 3.2rem;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      .subscript {
+        margin-top: 1.2rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+    }
+    .card-num-list {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0.8rem;
+      width: 100%;
+      margin-bottom: 8rem;
+      dl {
+        gap: 1.6rem;
+        padding: 2.4rem;
+        border-radius: 1.2rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+      dt {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+      }
+      dd {
+        word-break: break-all;
+      }
+    }
+    .card-step-list {
+      width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0.8rem;
+      margin-bottom: 8rem;
+      .card {
+        border-radius: 1.2rem;
+        padding: 4rem 2rem;
+        .card-header {
+          font-size: 2.2rem;
+          line-height: 3.6rem;
+          span {
+            margin-bottom: 0.4rem;
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+          }
+        }
+        .card-body {
+          height: auto;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+    .txt-card {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.8rem;
+      .card {
+        padding: 3.2rem 2.4rem;
+        border-radius: 1.2rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        .tit {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+          font-weight: 700;
+        }
+        .card-header {
+          margin-bottom: 1.6rem;
+          p {
+            margin-top: 1.6rem;
+          }
+        }
+        .card-body {
+          li {
+            padding-left: 1.6rem;
+          }
+          li:before {
+            top: 1.05rem;
+            width: 0.3rem;
+            height: 0.3rem;
+          }
+        }
+      }
+    }
+    .form-wrap {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+      .form-box {
+        .form-tit {
+          align-items: center;
+          h6 {
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+          }
+        }
+      }
+      .row {
+        gap: 0.8rem;
+        grid-template-columns: repeat(1, 1fr);
+        .label {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+  }
 }
