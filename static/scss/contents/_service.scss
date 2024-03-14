@@ -33,7 +33,8 @@
   }
   .circle-progress {
     margin: 10rem 0;
-    ul {
+    ol {
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -85,6 +86,7 @@
     gap: -vw(40);
     width: min(140rem, -vw(1400));
     margin: 0 auto;
+    overflow: hidden;
     .card {
       flex: 1 1 auto;
       width: min(32rem, -vw(320));

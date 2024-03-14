@@ -1,5 +1,7 @@
 @use 'sass:math';
-
+#wrapper {
+  min-width: 32rem;
+}
 /*header*/
 #header {
   height: 12rem;
@@ -300,6 +302,43 @@
       top: 8rem;
     }
   }
+  .gnbOpen {
+    overflow: hidden;
+    #header {
+      #gnb {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        transition: 0.3s ease-in background;
+        background-color: $white-color;
+        .btn-gnb {
+          .gnb-current {
+            &::before,
+            &::after {
+              background-color: $black-color;
+            }
+          }
+        }
+        ul {
+          visibility: visible;
+          top: 50%;
+          left: 50%;
+          flex-wrap: wrap;
+          transform: translate(-50%, -50%);
+          li {
+            display: block;
+            width: 100%;
+            text-align: center;
+            a {
+              color: $black-color2;
+            }
+          }
+        }
+      }
+    }
+  }
   #container {
     .top-banner {
       height: 32rem;
@@ -368,6 +407,16 @@
   #container {
     .top-banner {
       background-size: auto 32rem;
+    }
+  }
+  /* footer */
+  #footer {
+    .inner {
+      .policy-list {
+        li {
+          padding: 0 1rem;
+        }
+      }
     }
   }
 }
