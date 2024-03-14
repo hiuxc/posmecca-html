@@ -58,3 +58,14 @@
   justify-content: center;
   gap: 1rem;
 }
+
+@media only screen and (max-width: 1024px) {
+  .btn-bottom-box {
+    .btn {
+      flex: 1;
+      min-width: 17.2rem;
+      height: 6rem;
+      line-height: 1.2rem;
+    }
+  }
+}

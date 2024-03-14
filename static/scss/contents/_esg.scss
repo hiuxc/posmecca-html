@@ -143,4 +143,111 @@
 }
 /* mobile */
 @media only screen and (max-width: 1024px) {
+  .esg-contents {
+    padding: 10rem 0;
+    .subscript {
+      font-size: 2.2rem;
+      line-height: 3.6rem;
+      word-break: break-all;
+    }
+    .visual-img {
+      height: 24.7rem;
+      margin-top: 4rem;
+      margin-bottom: 8.2rem;
+      border-radius: 1.2rem;
+      &.-env {
+        background-image: url(../images/esg/img-mobile-environment.png);
+      }
+      &.-soci {
+        background-image: url(../images/esg/img-mobile-sociial.png);
+      }
+      &.-gov {
+        background-image: url(../images/esg/img-mobile-governance.png);
+      }
+    }
+    .target-list {
+      width: 100%;
+      flex-direction: column;
+      row-gap: 4rem;
+      .title {
+        width: auto;
+        padding-left: 0;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+      }
+      .num-list {
+        dl {
+          gap: 2rem;
+          + dl {
+            margin-top: 3.2rem;
+            padding-top: 3.2rem;
+          }
+        }
+        dt {
+          font-size: 2.8rem;
+          line-height: 3.3rem;
+        }
+        dd {
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+        }
+      }
+    }
+    .declare-list {
+      width: 100%;
+      .title {
+        margin-left: 0;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+      }
+      .list {
+        margin-left: 0;
+        margin-top: 4rem;
+        li {
+          flex-direction: column;
+          gap: 0.8rem;
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+          &::before {
+            font-size: 2.2rem;
+            line-height: 3.6rem;
+            font-weight: 700;
+          }
+          + li {
+            margin-top: 3.2rem;
+            padding-top: 3.2rem;
+          }
+        }
+      }
+      .footnote {
+        margin-top: 4rem;
+        margin-left: 0;
+        padding: 0;
+        border: 0;
+        font-size: 2.2rem;
+        line-height: 3.6rem;
+        word-break: break-all;
+      }
+    }
+    .sig-box {
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 4rem;
+      gap: 1.6rem;
+      .sig-cell {
+        gap: 2.4rem;
+        .name {
+          font-weight: 700;
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+        }
+        .w-93 {
+          width: 7.2rem !important;
+        }
+        .w-129 {
+          width: 10rem !important;
+        }
+      }
+    }
+  }
 }
