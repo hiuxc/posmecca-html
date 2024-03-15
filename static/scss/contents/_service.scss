@@ -292,6 +292,7 @@
         position: absolute;
         top: -vw(-300);
         left: 27%;
+        transform: translateX(-50%);
       }
       strong {
         font-size: min(2.2rem, -vw(22));
