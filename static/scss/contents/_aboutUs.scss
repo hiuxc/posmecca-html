@@ -239,6 +239,119 @@
       }
     }
   }
+
+  /*연혁*/
+  .history-img {
+    position: relative;
+    width: min(140rem, -vw(1400));
+    height: -vw(240);
+    margin: 0 auto;
+    object-fit: fill;
+    overflow: hidden;
+    img {
+      width: 100%;
+      border-radius: -vw(12);
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Pretendard';
+      font-size: min(4.8rem, -vw(48));
+      line-height: min(5.7rem, -vw(57));
+      font-weight: 900;
+      color: $white-color;
+    }
+  }
+}
+.history-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(140rem, -vw(1400));
+  margin: -vw(60) auto;
+  margin-top: -vw(75); //strong top값으로 여백추가
+  + .history-img {
+    margin-top: -vw(100);
+  }
+  .cell {
+    position: relative;
+    width: 50%;
+    padding-top: -vw(53);
+    padding-bottom: -vw(22);
+    strong {
+      position: absolute;
+      top: -vw(-30);
+      font-size: min(4.8rem, -vw(48));
+      line-height: min(5.7rem, -vw(57));
+      font-weight: 900;
+      &::before {
+        content: '';
+        position: absolute;
+        left: -vw(-55);
+        top: -vw(23);
+        display: block;
+        width: -vw(12);
+        height: -vw(12);
+        border-radius: 50%;
+        border: 3px solid #ddd;
+        background-color: #fff;
+      }
+    }
+    .list {
+      dl {
+        position: relative;
+        padding-left: -vw(44);
+        font-family: 'Pretendard';
+        + dl {
+          margin-top: -vw(16);
+        }
+      }
+      dt {
+        position: absolute;
+        left: 0;
+        font-size: min(2rem, -vw(20));
+        line-height: min(2.8rem, -vw(28));
+        font-weight: 700;
+      }
+      dd {
+        font-size: min(2rem, -vw(20));
+        line-height: min(2.8rem, -vw(28));
+        font-weight: 400;
+        + dd {
+          margin-top: -vw(16);
+        }
+      }
+    }
+    &:nth-child(2n-1) {
+      align-self: flex-end;
+      padding-left: -vw(46);
+      border-left: 1px solid #ddd;
+    }
+    &:nth-child(2n) {
+      padding-right: -vw(46);
+      border-right: 1px solid #ddd;
+      text-align: right;
+      strong {
+        right: -vw(42);
+        &::before {
+          left: unset;
+          right: -vw(-52);
+        }
+      }
+      .list dl {
+        padding-right: -vw(44);
+      }
+      .list dt {
+        right: 0;
+        left: auto;
+      }
+    }
+    &:last-child {
+      border: 0;
+    }
+  }
 }
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
