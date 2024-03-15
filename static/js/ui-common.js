@@ -51,13 +51,7 @@ function commonUI() {
   const $scrollTopBtn = $scrollTop.children();
 
   $scrollTopBtn.on('click', function () {
-    if ($('#wrapper').hasClass('main')) {
-      scrollArea.animate({ scrollTop: 0 }, 800, function () {
-        $(this).closest('#container').removeClass('active');
-      });
-    } else {
-      $('html, body').animate({ scrollTop: 0 }, 500);
-    }
+    $('html, body').animate({ scrollTop: 0 }, 500);
   });
   $scrollTopBtn.hide();
   $(window).scroll(function () {
@@ -133,12 +127,19 @@ function commonUI() {
     }
     if ($('.main-bottomContents .swiper-slide').length) {
       $mainBottomContents = new Swiper('.main-bottomContents .swiper', {
-        slidesPerView: 'auto',
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false
-        }
+        slidesPerView: 'auto'
       });
+
+      setInterval(() => {
+        // 다음 슬라이드로 이동
+        if ($mainBottomContents.activeIndex === $mainBottomContents.slides.length - 1) {
+          // 마지막 슬라이드면 첫 번째 슬라이드로 이동
+          $mainBottomContents.slideTo(0);
+        } else {
+          // 마지막 슬라이드가 아니면 다음 슬라이드로 이동
+          $mainBottomContents.slideNext();
+        }
+      }, 4500);
     }
   }
 
@@ -150,6 +151,7 @@ function commonUI() {
     if ($mainBottomContents) {
       $mainBottomContents.destroy(true, true);
       $mainBottomContents = undefined;
+      $('.swiper-wrapper').attr('style', '');
     }
   }
 
@@ -225,6 +227,7 @@ function commonUI() {
   // 스크롤 애니메이션
   const aniElements = document.querySelectorAll('[data-animation]');
   aniElements.forEach(function (element) {
+    // 디폴트 opacity 주기 위한 클래스
     element.classList.add('ani-ready');
   });
 
@@ -234,9 +237,7 @@ function commonUI() {
     elements.forEach(function (element) {
       let position = element.getBoundingClientRect();
       let screenMiddle = window.innerHeight;
-      console.log(screenMiddle);
       let animationClass = element.getAttribute('data-animation');
-      // element.classList.add('animated');
 
       if (position.top + position.height / 2 < screenMiddle) {
         element.classList.remove('ani-ready');

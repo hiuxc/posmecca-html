@@ -312,7 +312,7 @@
     margin: 0 auto;
     margin-bottom: -vw(120);
     font-family: 'Pretendard';
-    > ul {
+    > ol {
       display: flex;
       align-items: stretch;
       width: 100%;
@@ -578,7 +578,7 @@
       width: 100%;
       max-width: 35.3rem;
       margin-bottom: 8rem;
-      > ul {
+      > ol {
         flex-direction: column;
         border-radius: 1.2rem;
       }
