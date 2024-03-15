@@ -363,17 +363,19 @@
     position: absolute;
     top: 19rem;
     width: 68rem;
-    padding-right: 34rem;
-    box-sizing: border-box;
+
     right: 0;
-    ol {
+    .swiper-wrapper {
       display: flex;
       flex-wrap: wrap;
+      padding-right: 34rem;
+      box-sizing: border-box;
     }
-    li {
+    .swiper-slide {
       width: 34rem;
       padding: 2rem;
       flex: 0 0 auto;
+      height: auto;
       &:nth-child(2) {
         position: absolute;
         top: 50%;
@@ -527,5 +529,40 @@
     height: 6rem;
     background-size: auto 6rem;
     margin-bottom: 12rem;
+  }
+  .main-bottomContents {
+    margin-top: 10rem;
+    height: 86.5rem;
+    overflow: hidden;
+    .bottom-tit {
+      position: relative;
+      top: auto;
+      padding-top: 12rem;
+    }
+    .bottomContents-btns {
+      position: relative;
+      top: auto;
+      margin-left: -0.8rem;
+      margin-top: 6rem;
+      width: auto;
+      .swiper {
+        overflow: visible;
+      }
+      .swiper-wrapper {
+        flex-wrap: nowrap;
+        padding-right: 0;
+      }
+      .swiper-slide {
+        flex: none;
+        box-sizing: border-box;
+        padding: 0 0.8rem;
+        &:nth-child(2) {
+          position: relative;
+          top: auto;
+          right: auto;
+          transform: none;
+        }
+      }
+    }
   }
 }

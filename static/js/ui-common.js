@@ -119,26 +119,45 @@ function commonUI() {
 
   //공통 서브 메뉴 탭
   let $tabSwiper;
-  function initTabSwiper() {
+  //메인 하단 스와이퍼
+  let $mainBottomContents;
+  let activeIndex = Array.from(document.querySelectorAll('.swiper-slide')).findIndex(function (slide) {
+    return slide.classList.contains('active');
+  });
+  function initSwiper() {
     if ($('.common-tab .swiper-slide').length) {
       $tabSwiper = new Swiper('.common-tab .swiper', {
-        slidesPerView: 'auto'
+        slidesPerView: 'auto',
+        initialSlide: activeIndex
+      });
+    }
+    if ($('.main-bottomContents .swiper-slide').length) {
+      $mainBottomContents = new Swiper('.main-bottomContents .swiper', {
+        slidesPerView: 'auto',
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        }
       });
     }
   }
 
-  function destroyTabSwiper() {
+  function destroySwiper() {
     if ($tabSwiper) {
       $tabSwiper.destroy(true, true);
       $tabSwiper = undefined;
+    }
+    if ($mainBottomContents) {
+      $mainBottomContents.destroy(true, true);
+      $mainBottomContents = undefined;
     }
   }
 
   function handleWindowResize() {
     if (window.innerWidth > 1024) {
-      destroyTabSwiper();
+      destroySwiper();
     } else {
-      initTabSwiper();
+      initSwiper();
     }
   }
   $(window).on('load', function () {
@@ -203,19 +222,16 @@ function commonUI() {
     $(this).siblings('.upload-name').val(fileList);
   });
 
-  // 스크롤 이벤트 리스너를 추가합니다.
+  // 스크롤 이벤트
   const aniElements = document.querySelectorAll('[data-animation]');
   aniElements.forEach(function (element) {
     element.classList.add('ani-ready');
   });
 
   window.addEventListener('scroll', function () {
-    // 'data-animation' 속성을 가진 모든 요소를 선택합니다.
     const elements = document.querySelectorAll('[data-animation]');
 
     elements.forEach(function (element) {
-      // 각 요소의 위치 정보를 가져옵니다.
-
       let position = element.getBoundingClientRect();
       let screenMiddle = window.innerHeight / 2;
       let animationClass = element.getAttribute('data-animation');
@@ -386,19 +402,21 @@ function mainUI() {
 
   // 5초마다 클릭 이벤트 발생
   let index = 0;
-  setTimeout(() => {
-    index = 1;
-  }, 5000);
-  setInterval(() => {
-    bottomBtns[index].click();
+  if (window.innerWidth > 1024) {
+    setTimeout(() => {
+      index = 1;
+    }, 5000);
+    setInterval(() => {
+      bottomBtns[index].click();
 
-    index++;
+      index++;
 
-    // index가 마지막 요소를 넘어가면 초기화
-    if (index >= bottomBtns.length) {
-      index = 0;
-    }
-  }, 5000);
+      // index가 마지막 요소를 넘어가면 초기화
+      if (index >= bottomBtns.length) {
+        index = 0;
+      }
+    }, 5000);
+  }
 
   // 페이지를 벗어날 때 interval 정리
   window.addEventListener('beforeunload', () => {
