@@ -222,7 +222,7 @@ function commonUI() {
     $(this).siblings('.upload-name').val(fileList);
   });
 
-  // 스크롤 이벤트
+  // 스크롤 애니메이션
   const aniElements = document.querySelectorAll('[data-animation]');
   aniElements.forEach(function (element) {
     element.classList.add('ani-ready');
@@ -233,11 +233,12 @@ function commonUI() {
 
     elements.forEach(function (element) {
       let position = element.getBoundingClientRect();
-      let screenMiddle = window.innerHeight / 2;
+      let screenMiddle = window.innerHeight;
+      console.log(screenMiddle);
       let animationClass = element.getAttribute('data-animation');
       // element.classList.add('animated');
 
-      if (position.top + position.height / 3 < screenMiddle) {
+      if (position.top + position.height / 2 < screenMiddle) {
         element.classList.remove('ani-ready');
         element.classList.add('animate__animated');
 
@@ -402,21 +403,20 @@ function mainUI() {
 
   // 5초마다 클릭 이벤트 발생
   let index = 0;
-  if (window.innerWidth > 1024) {
-    setTimeout(() => {
-      index = 1;
-    }, 5000);
-    setInterval(() => {
-      bottomBtns[index].click();
 
-      index++;
+  setTimeout(() => {
+    index = 1;
+  }, 4500);
+  setInterval(() => {
+    bottomBtns[index].click();
 
-      // index가 마지막 요소를 넘어가면 초기화
-      if (index >= bottomBtns.length) {
-        index = 0;
-      }
-    }, 5000);
-  }
+    index++;
+
+    // index가 마지막 요소를 넘어가면 초기화
+    if (index >= bottomBtns.length) {
+      index = 0;
+    }
+  }, 4500);
 
   // 페이지를 벗어날 때 interval 정리
   window.addEventListener('beforeunload', () => {
@@ -428,13 +428,14 @@ function mainUI() {
 function aboutUi() {
   const addressBox = document.querySelector('.address-box');
   const addressTabBtn = document.querySelectorAll('.location-tab .list a');
+
   addressTabBtn.forEach(function (tab) {
     tab.addEventListener('click', function (e) {
       e.preventDefault();
       const parentLi = e.target.closest('.list');
       const relValue = tab.getAttribute('rel');
-
       const addressTxt = document.querySelector('.location-tab-contents > .address');
+      let addressVar;
 
       addressBox.className = 'address-box'; // 주소 리셋
       addressBox.classList.add(relValue); // 클릭한 주소 클래스 추가
@@ -443,23 +444,26 @@ function aboutUi() {
 
       switch (relValue) {
         case 'seoul':
-          addressTxt.textContent = '서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호';
+          addressVar = '서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호';
           break;
         case 'busan':
-          addressTxt.textContent = '부산광역시 부산진구 거제대로60번길 15 매종해달별 802호 (양정동)';
+          addressVar = '부산광역시 부산진구 거제대로60번길 15 매종해달별 802호 (양정동)';
           break;
         case 'daejeon':
-          addressTxt.textContent = '대전광역시 중구 성산로19번길 11 101호 (안영동)';
+          addressVar = '대전광역시 중구 성산로19번길 11 101호 (안영동)';
           break;
         case 'daegu':
-          addressTxt.textContent = '대구광역시 남구 현충로5길 75 1층 (대명동)';
+          addressVar = '대구광역시 남구 현충로5길 75 1층 (대명동)';
           break;
         case 'gwangju':
-          addressTxt.textContent = '광주광역시 광산구 선운중앙로67번길 22 킹스빌 302호 (선암동)';
+          addressVar = '광주광역시 광산구 선운중앙로67번길 22 킹스빌 302호 (선암동)';
           break;
         default:
-          addressTxt.textContent = '서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호';
+          addressVar = '서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호';
       }
+
+      addressTxt.textContent = addressVar;
+      kakakoMapInit(addressVar);
 
       document.querySelectorAll('.location-tab .list').forEach((div) => {
         div.classList.remove('active');
@@ -470,44 +474,37 @@ function aboutUi() {
       }
     });
   });
+
+  // 페이지 로드시 1번 탭 활성화
+  document.addEventListener('DOMContentLoaded', function () {
+    addressTabBtn[0].click();
+  });
 }
 
-//map
-function kakakoMapInit() {
+function kakakoMapInit(addressVar) {
   var mapContainer = document.getElementById('companyMap'), // 지도를 표시할 div
     mapOption = {
-      center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+      center: new kakao.maps.LatLng(37.4689627800606, 126.895620657193), // 초기 지도의 중심좌표
       level: 3 // 지도의 확대 레벨
     };
 
-  // 지도를 생성합니다
-  var map = new kakao.maps.Map(mapContainer, mapOption);
+  var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+  var geocoder = new kakao.maps.services.Geocoder(); // 주소-좌표 변환 객체를 생성합니다
 
-  // 주소-좌표 변환 객체를 생성합니다
-  var geocoder = new kakao.maps.services.Geocoder();
-
-  let addressVar = '서울특별시 금천구 두산로 70, 현대지식산업센터 A동 1807호/1808호';
-
-  // 주소로 좌표를 검색합니다
   geocoder.addressSearch(addressVar, function (result, status) {
-    // 정상적으로 검색이 완료됐으면
     if (status === kakao.maps.services.Status.OK) {
       var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-      // 결과값으로 받은 위치를 마커로 표시합니다
       var marker = new kakao.maps.Marker({
         map: map,
         position: coords
       });
 
-      // 인포윈도우로 장소에 대한 설명을 표시합니다
       var infowindow = new kakao.maps.InfoWindow({
-        content: '<div style="width:150px;text-align:center;padding:6px 0;">POSMECCA</div>'
+        content: '<div style="width:150px;text-align:center;padding:6px 0;border-radius:10px;">POSMECCA</div>'
       });
       infowindow.open(map, marker);
 
-      // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-      map.setCenter(coords);
+      map.setCenter(coords); // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
     }
   });
 }
