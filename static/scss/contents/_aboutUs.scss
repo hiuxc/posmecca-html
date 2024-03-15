@@ -10,6 +10,7 @@
     line-height: min(5.6rem, -vw(56));
     text-align: center;
   }
+  //인사말
   .greeting-box {
     width: -vw(1374);
     display: flex;
@@ -221,14 +222,15 @@
         dl {
           display: flex;
           gap: -vw(8);
-          + dl {
+          + .flex {
+            gap: -vw(8);
             margin-top: -vw(12);
           }
         }
         dt {
           font-weight: 700;
         }
-        dd + dt {
+        dl + dl {
           margin-left: -vw(24);
         }
       }
@@ -264,95 +266,96 @@
       color: $white-color;
     }
   }
-}
-.history-box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: min(140rem, -vw(1400));
-  margin: -vw(60) auto;
-  margin-top: -vw(75); //strong top값으로 여백추가
-  + .history-img {
-    margin-top: -vw(100);
-  }
-  .cell {
+  .history-box {
     position: relative;
-    width: 50%;
-    padding-top: -vw(53);
-    padding-bottom: -vw(22);
-    strong {
-      position: absolute;
-      top: -vw(-30);
-      font-size: min(4.8rem, -vw(48));
-      line-height: min(5.7rem, -vw(57));
-      font-weight: 900;
-      &::before {
-        content: '';
-        position: absolute;
-        left: -vw(-55);
-        top: -vw(23);
-        display: block;
-        width: -vw(12);
-        height: -vw(12);
-        border-radius: 50%;
-        border: 3px solid #ddd;
-        background-color: #fff;
-      }
+    display: flex;
+    flex-direction: column;
+    width: min(140rem, -vw(1400));
+    margin: -vw(60) auto;
+    margin-top: -vw(75); //strong top값으로 여백추가
+    + .history-img {
+      margin-top: -vw(100);
     }
-    .list {
-      dl {
-        position: relative;
-        padding-left: -vw(44);
-        font-family: 'Pretendard';
-        + dl {
-          margin-top: -vw(16);
-        }
-      }
-      dt {
-        position: absolute;
-        left: 0;
-        font-size: min(2rem, -vw(20));
-        line-height: min(2.8rem, -vw(28));
-        font-weight: 700;
-      }
-      dd {
-        font-size: min(2rem, -vw(20));
-        line-height: min(2.8rem, -vw(28));
-        font-weight: 400;
-        + dd {
-          margin-top: -vw(16);
-        }
-      }
-    }
-    &:nth-child(2n-1) {
-      align-self: flex-end;
-      padding-left: -vw(46);
-      border-left: 1px solid #ddd;
-    }
-    &:nth-child(2n) {
-      padding-right: -vw(46);
-      border-right: 1px solid #ddd;
-      text-align: right;
+    .cell {
+      position: relative;
+      width: 50%;
+      padding-top: -vw(53);
+      padding-bottom: -vw(22);
       strong {
-        right: -vw(42);
+        position: absolute;
+        top: -vw(-30);
+        font-size: min(4.8rem, -vw(48));
+        line-height: min(5.7rem, -vw(57));
+        font-weight: 900;
         &::before {
-          left: unset;
-          right: -vw(-52);
+          content: '';
+          position: absolute;
+          left: -vw(-55);
+          top: -vw(23);
+          display: block;
+          width: -vw(12);
+          height: -vw(12);
+          border-radius: 50%;
+          border: -vw(3) solid #ddd;
+          background-color: #fff;
         }
       }
-      .list dl {
-        padding-right: -vw(44);
+      .list {
+        dl {
+          position: relative;
+          padding-left: -vw(44);
+          font-family: 'Pretendard';
+          + dl {
+            margin-top: -vw(16);
+          }
+        }
+        dt {
+          position: absolute;
+          left: 0;
+          font-size: min(2rem, -vw(20));
+          line-height: min(2.8rem, -vw(28));
+          font-weight: 700;
+        }
+        dd {
+          font-size: min(2rem, -vw(20));
+          line-height: min(2.8rem, -vw(28));
+          font-weight: 400;
+          + dd {
+            margin-top: -vw(16);
+          }
+        }
       }
-      .list dt {
-        right: 0;
-        left: auto;
+      &:nth-child(2n-1) {
+        align-self: flex-end;
+        padding-left: -vw(46);
+        border-left: 1px solid #ddd;
       }
-    }
-    &:last-child {
-      border: 0;
+      &:nth-child(2n) {
+        padding-right: -vw(46);
+        border-right: 1px solid #ddd;
+        text-align: right;
+        strong {
+          right: -vw(42);
+          &::before {
+            left: unset;
+            right: -vw(-52);
+          }
+        }
+        .list dl {
+          padding-right: -vw(44);
+        }
+        .list dt {
+          right: 0;
+          left: auto;
+        }
+      }
+      &:last-child {
+        border: 0;
+      }
     }
   }
 }
+
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
 ========================================================================== */
@@ -362,27 +365,245 @@
 /* mobile */
 @media only screen and (max-width: 1024px) {
   .about-contents {
-    .certific-box {
-      grid-template-columns: repeat(3, 1fr);
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    .about-title {
+      font-size: 2.2rem;
+      line-height: 3.6rem;
+      margin-bottom: 4rem;
+    }
+    //인사말
+    .greeting-box {
+      width: 100%;
+      gap: 8rem;
+      flex-direction: column-reverse;
+      .object-img {
+        width: 100%;
+        height: 48.8rem;
+        img {
+          width: 31.2rem;
+          height: 42rem;
+          border-radius: 1.2rem;
+        }
+        &::before {
+          width: 19rem;
+          height: 4.6rem;
+          top: 18rem;
+          left: 5.4rem;
+        }
+        &::after {
+          width: 24.4rem;
+          height: 24.4rem;
+          border-radius: 1.2rem;
+        }
+      }
+      .txt-content {
+        .title {
+          margin-bottom: 4rem;
+          font-size: 2.2rem;
+          line-height: 3.6rem;
+        }
+        .subtit {
+          font-weight: 700;
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+        }
+        p {
+          margin-top: 3.2rem;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          + .subtit {
+            margin-top: 3.2rem;
+          }
+        }
+      }
+    }
+    //주요연혁
+    .history-img {
+      width: 100%;
+      height: 12.4rem;
       img {
-        width: -vw(280, 1400);
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1.2rem;
+      }
+      span {
+        font-size: 3.2rem;
+        line-height: 3.8rem;
+      }
+    }
+    .history-box {
+      width: 100%;
+      margin-top: 3.2rem;
+      + .history-img {
+        margin-top: 8rem;
+      }
+      .cell {
+        width: 100%;
+        padding-top: 2.8rem;
+        padding-bottom: 4.2rem;
+        strong {
+          top: -1.5rem;
+          left: 1.8rem;
+          font-size: 2.4rem;
+          line-height: 2.8rem;
+          &::before {
+            left: -2.4rem;
+            top: 0.9rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            border: 3px solid #ddd;
+          }
+        }
+        .list {
+          dl {
+            padding-left: 3rem;
+            + dl {
+              margin-top: 1.2rem;
+            }
+          }
+          dt {
+            width: 2.2rem;
+            left: 0;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            font-weight: 600;
+            text-align: right;
+          }
+          dd {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            font-weight: 500;
+            + dd {
+              margin-top: 0.8rem;
+            }
+          }
+        }
+        &:nth-child(2n-1) {
+          align-self: flex-start;
+          padding-left: 1.8rem;
+          border-left: 1px solid #ddd;
+        }
+        &:nth-child(2n) {
+          padding-left: 1.8rem;
+          border-left: 1px solid #ddd;
+          border-right: 0;
+          text-align: left;
+          strong {
+            right: unset;
+            left: 1.8rem;
+            &::before {
+              left: -2.4rem;
+              top: 0.9rem;
+              right: unset;
+            }
+          }
+          .list dl {
+            padding-right: 0;
+          }
+          .list dt {
+            left: 0;
+            right: unset;
+          }
+        }
+        &:last-child {
+          padding-bottom: 0;
+          border-left: 0;
+        }
+      }
+    }
+    //인증현황
+    .certific-box {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.2rem;
+      row-gap: 2.4rem;
+      img {
+        width: 17rem;
+        height: 22.6rem;
+        margin-bottom: 1.6rem;
+        border-radius: 1.2rem;
       }
       .cell {
         &::after {
-          width: -vw(280, 1400);
-          height: -vw(372, 1400);
+          width: 17rem;
+          height: 22.6rem;
+          border-radius: 1.2rem;
         }
       }
       .name {
-        font-size: min(2rem, -vw(20, 1400));
-        line-height: min(2.8rem, -vw(28, 1400));
+        font-size: 1.6rem;
+        line-height: 2.4rem;
       }
     }
+    //찾아오시는길
     .address-box {
       .location-tab {
+        width: 27.2rem;
+        flex-wrap: wrap;
+        column-gap: 3.3rem;
+        row-gap: 1.2rem;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        a {
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+        }
         .list + .list::before {
-          top: 50%;
-          transform: translateY(-50%);
+          left: -1.6rem;
+          top: 0.3rem;
+          width: 1px;
+          height: 2rem;
+        }
+      }
+      .address {
+        margin-bottom: 2.4rem;
+        font-size: 2.2rem;
+        line-height: 3.6rem;
+      }
+      .company-map {
+        border-radius: 1.2rem;
+        width: 100%;
+        height: 42rem;
+      }
+      .traffic-box {
+        width: 100%;
+        flex-direction: column;
+        border-radius: 1.2rem;
+        gap: 4.8rem;
+        margin-top: 2rem;
+        padding: 3.2rem;
+        .tit {
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+          margin-bottom: 1.2rem;
+        }
+        .txt {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          p + p {
+            margin-top: 1.2rem;
+          }
+        }
+        .bus {
+          &::before {
+            left: 0;
+            top: -2.4rem;
+            width: 100%;
+            height: 2.4rem;
+            border-top: 1px dashed #ddd;
+            border-left: 0;
+          }
+          dl {
+            gap: 0.8rem;
+            + .flex {
+              flex-direction: column;
+              margin-top: 1.2rem;
+            }
+            + dl {
+              margin-top: 1.2rem;
+            }
+          }
         }
       }
     }
