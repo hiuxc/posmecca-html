@@ -127,7 +127,11 @@ function commonUI() {
     }
     if ($('.main-bottomContents .swiper-slide').length) {
       $mainBottomContents = new Swiper('.main-bottomContents .swiper', {
-        slidesPerView: 'auto'
+        slidesPerView: 'auto',
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        }
       });
     }
   }
@@ -144,10 +148,9 @@ function commonUI() {
   }
 
   function handleWindowResize() {
-    if (window.innerWidth > 1024) {
-      destroySwiper();
-      $('.bottomContents-btns .swiper-wrapper').attr('style', '');
-    } else {
+    destroySwiper();
+    $('.bottomContents-btns .swiper-wrapper').attr('style', '');
+    if (window.innerWidth < 1024) {
       initSwiper();
     }
   }

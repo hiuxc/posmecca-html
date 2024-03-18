@@ -363,7 +363,6 @@
     position: absolute;
     top: 19rem;
     width: 68rem;
-
     right: 0;
     .swiper-wrapper {
       display: flex;
@@ -561,6 +560,40 @@
           top: auto;
           right: auto;
           transform: none;
+        }
+        &.active {
+          a {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            border: 0.1rem solid rgba(255, 255, 255, 0.3);
+            .idx,
+            .tit,
+            .txt {
+              color: #fff;
+            }
+            .idx {
+              font-weight: normal;
+              font-size: 2rem;
+            }
+          }
+        }
+        &.swiper-slide-active {
+          a {
+            background: #fff;
+            border-color: #fff;
+            .idx {
+              color: #222;
+              font-weight: bold;
+              font-size: 3.2rem;
+            }
+            .tit {
+              color: #222;
+            }
+            .txt {
+              color: #555;
+              opacity: 1;
+            }
+          }
         }
       }
     }
