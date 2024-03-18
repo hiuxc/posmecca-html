@@ -129,17 +129,6 @@ function commonUI() {
       $mainBottomContents = new Swiper('.main-bottomContents .swiper', {
         slidesPerView: 'auto'
       });
-
-      setInterval(() => {
-        // 다음 슬라이드로 이동
-        if ($mainBottomContents.activeIndex === $mainBottomContents.slides.length - 1) {
-          // 마지막 슬라이드면 첫 번째 슬라이드로 이동
-          $mainBottomContents.slideTo(0);
-        } else {
-          // 마지막 슬라이드가 아니면 다음 슬라이드로 이동
-          $mainBottomContents.slideNext();
-        }
-      }, 4500);
     }
   }
 
@@ -151,13 +140,13 @@ function commonUI() {
     if ($mainBottomContents) {
       $mainBottomContents.destroy(true, true);
       $mainBottomContents = undefined;
-      $('.swiper-wrapper').attr('style', '');
     }
   }
 
   function handleWindowResize() {
     if (window.innerWidth > 1024) {
       destroySwiper();
+      $('.bottomContents-btns .swiper-wrapper').attr('style', '');
     } else {
       initSwiper();
     }
@@ -495,15 +484,16 @@ function kakakoMapInit(addressVar) {
   geocoder.addressSearch(addressVar, function (result, status) {
     if (status === kakao.maps.services.Status.OK) {
       var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+      var imageSrc = '../static/images/common/map_marker.png',
+        imageSize = new kakao.maps.Size(138, 76), // 마커이미지의 크기입니다
+        imageOption = { offset: new kakao.maps.Point(69, 76) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
       var marker = new kakao.maps.Marker({
         map: map,
-        position: coords
+        position: coords,
+        image: markerImage
       });
-
-      var infowindow = new kakao.maps.InfoWindow({
-        content: '<div style="width:150px;text-align:center;padding:6px 0;border-radius:10px;">POSMECCA</div>'
-      });
-      infowindow.open(map, marker);
 
       map.setCenter(coords); // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
     }

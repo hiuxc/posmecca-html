@@ -288,6 +288,8 @@
       border-radius: -vw(200);
       font-family: 'Pretendard';
       text-align: center;
+      opacity: 0;
+
       &.top {
         position: absolute;
         top: -vw(-300);
@@ -324,6 +326,7 @@
     .card {
       position: relative;
       flex: 1;
+      opacity: 0;
       .card-header {
         display: flex;
         justify-content: center;
