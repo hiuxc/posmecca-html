@@ -472,6 +472,6 @@ body {
 }
 @for $i from 1 through 10 {
   .ani-delay-#{$i} {
-    animation-delay: 0.3s * $i;
+    animation-delay: 0.2s * $i;
   }
 }

@@ -86,15 +86,15 @@
       li {
         display: flex;
         gap: -vw(20);
-        font-size: min(2.2rem, -vw(22));
-        line-height: min(3.6rem, -vw(36));
+        font-size: 2.2rem;
+        line-height: 3.6rem;
         font-weight: 500;
         color: #000;
         &::before {
           content: '하나,';
           font-weight: 600;
-          font-size: min(2.4rem, -vw(24));
-          line-height: min(3.6rem, -vw(36));
+          font-size: 2.4rem;
+          line-height: 3.6rem;
         }
         + li {
           margin-top: -vw(32);
