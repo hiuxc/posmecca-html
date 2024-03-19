@@ -128,9 +128,19 @@ function commonUI() {
     if ($('.main-bottomContents .swiper-slide').length) {
       $mainBottomContents = new Swiper('.main-bottomContents .swiper', {
         slidesPerView: 'auto',
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false
+        // autoplay: {
+        //   delay: 4500,
+        //   disableOnInteraction: false
+        // },
+        on: {
+          click: function () {
+            this.slides.forEach((slide) => {
+              slide.classList.remove('active');
+            });
+            // 현재 활성화된 슬라이드에 active 클래스 추가
+            const activeSlide = this.slides[this.activeIndex];
+            activeSlide.classList.add('active');
+          }
         }
       });
     }
@@ -368,53 +378,65 @@ function mainUI() {
   });
 
   // 메인 하단 SOLUTIONS & SERVICE
-  const mainBottom = document.querySelector('.main-bottomContents');
-  const bottomBtns = mainBottom.querySelectorAll('.bottomContents-btns a');
+  function initializeBottomContentFeature() {
+    const mainBottom = document.querySelector('.main-bottomContents');
+    if (!mainBottom) return; // .main-bottomContents 요소가 없으면 초기화 중지
 
-  bottomBtns.forEach((bottomBtn, i) => {
-    bottomBtn.addEventListener('click', function (event) {
-      event.preventDefault();
+    const bottomBtns = mainBottom.querySelectorAll('.bottomContents-btns a');
+    let index = 0; // 현재 활성화된 버튼의 인덱스
+    let intervalId; // setInterval을 위한 변수
 
-      index = i;
-      mainBottom.classList.remove('type-1', 'type-2', 'type-3');
-      // 클릭한 <a> 태그의 data-bg 속성 값을 가져옴
-      const dataBg = event.currentTarget.getAttribute('data-bg');
+    // 클릭 이벤트 리스너 설정
+    bottomBtns.forEach((bottomBtn, i) => {
+      bottomBtn.addEventListener('click', function (event) {
+        event.preventDefault();
 
-      // $mainBottom에 data-bg 속성 값을 클래스로 추가
-      if (dataBg) {
-        mainBottom.classList.add(dataBg);
-      }
-      bottomBtns.forEach((btn) => {
-        const parentLi = btn.parentElement;
-        parentLi.classList.remove('active');
+        index = i;
+        mainBottom.classList.remove('type-1', 'type-2', 'type-3');
+
+        const dataBg = event.currentTarget.getAttribute('data-bg');
+        if (dataBg) {
+          mainBottom.classList.add(dataBg);
+        }
+
+        bottomBtns.forEach((btn) => {
+          const parentLi = btn.parentElement;
+          parentLi.classList.remove('active');
+        });
+
+        const clickedParentLi = event.currentTarget.parentElement;
+        clickedParentLi.classList.add('active');
       });
-
-      const clickedParentLi = event.currentTarget.parentElement;
-      clickedParentLi.classList.add('active');
     });
-  });
 
-  // 5초마다 클릭 이벤트 발생
-  let index = 0;
+    // 4.5초마다 클릭 이벤트 자동 발생
+    clearInterval(intervalId); // 이전 interval을 클리어
+    intervalId = setInterval(() => {
+      bottomBtns[index].click();
 
-  setTimeout(() => {
-    index = 1;
-  }, 4500);
-  setInterval(() => {
-    bottomBtns[index].click();
+      index++;
+      if (index >= bottomBtns.length) {
+        index = 0;
+      }
+    }, 4500);
 
-    index++;
+    // 페이지를 벗어날 때 interval 정리
+    window.addEventListener('beforeunload', () => {
+      clearInterval(intervalId);
+    });
+  }
 
-    // index가 마지막 요소를 넘어가면 초기화
-    if (index >= bottomBtns.length) {
-      index = 0;
+  function checkWindowSizeAndInitialize() {
+    if (window.innerWidth >= 1024) {
+      initializeBottomContentFeature();
     }
-  }, 4500);
+  }
 
-  // 페이지를 벗어날 때 interval 정리
-  window.addEventListener('beforeunload', () => {
-    clearInterval(intervalId);
-  });
+  // 초기 로드 시 체크
+  checkWindowSizeAndInitialize();
+
+  // 윈도우 크기 변경 시 다시 체크
+  window.addEventListener('resize', checkWindowSizeAndInitialize);
 }
 
 /* about ui */
