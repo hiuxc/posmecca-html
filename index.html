@@ -31,6 +31,12 @@
     <link rel="stylesheet" href="./static/css/default.min.css" />
     <link rel="stylesheet" href="./static/css/custom.min.css" />
     <style>
+      #header {
+        background-color: #72727248;
+      }
+      #container {
+        margin: 5rem 0;
+      }
       .html-list {
         border-bottom: 0.1rem solid #72727248;
       }
@@ -48,29 +54,30 @@
         color: green;
       }
       /* 모바일 */
-      @media only screen and (max-width: 768px) {
-        .html-list thead th,
-        .html-list tbody th,
-        .html-list tbody td {
-          padding: 1rem;
-          font-size: 1.2rem;
-        }
-        .html-list .etc,
-        .html-list .depth-2 {
-          display: none;
-        }
-        .html-list th:last-child,
-        .html-list td:last-child {
-          font-size: 0;
-        }
-        .html-list td.current-worked::before {
-          content: '△';
-          font-size: 1rem;
-        }
-        .html-list .current-worked.completed::before {
-          content: '○';
-          font-size: 1rem;
-        }
+      .html-list thead {
+        background-color: #ccc;
+      }
+      .html-list thead th,
+      .html-list tbody th,
+      .html-list tbody td {
+        padding: 1rem;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .html-list .etc {
+        display: none;
+      }
+      .html-list th:last-child,
+      .html-list td:last-child {
+        font-size: 0;
+      }
+      .html-list td.current-worked::before {
+        content: '△';
+        font-size: 1rem;
+      }
+      .html-list .current-worked.completed::before {
+        content: '○';
+        font-size: 1rem;
       }
     </style>
   </head>
@@ -106,50 +113,107 @@
                 <th class="t-center">Main</th>
                 <td class="depth-2">메인 페이지</td>
                 <td><a href="./html/main.html" target="_blank" title="새창열림">main.html</a></td>
-                <td></td>
+                <td>변상우</td>
                 <td class="etc"></td>
-                <td class="current-worked">진행중</td>
+                <td class="current-worked">완료</td>
               </tr>
               <tr class="depth-1">
-                <th rowspan="1" class="t-center">Service</th>
-                <td class="depth-2">Service</td>
-                <td><a href="./html/work.html" target="_blank" title="새창열림">Service</a></td>
-                <td></td>
+                <th rowspan="3" class="t-center">Service</th>
+                <td class="depth-2">솔루션 컨설팅</td>
+                <td><a href="./html/service_solution.html" target="_blank" title="새창열림">service_solution</a></td>
+                <td>박은교</td>
                 <td class="etc"></td>
-                <td class="current-worked">진행중</td>
+                <td class="current-worked">완료</td>
+              </tr>
+
+              <tr class="depth-1">
+                <td class="depth-2">비즈니스 아웃소싱</td>
+                <td><a href="./html/service_bussines.html" target="_blank" title="새창열림">service_bussines</a></td>
+                <td>박은교</td>
+                <td class="etc"></td>
+                <td class="current-worked">완료</td>
+              </tr>
+              <tr class="depth-1">
+                <td class="depth-2">유지보수 서비스</td>
+                <td><a href="./html/service_maintance.html" target="_blank" title="새창열림">service_maintance</a></td>
+                <td>박은교</td>
+                <td class="etc"></td>
+                <td class="current-worked">완료</td>
               </tr>
 
               <tr class="depth-1">
                 <th class="t-center">Reference</th>
                 <td class="depth-2">Reference</td>
-                <td><a href="./html/about.html" target="_blank" title="새창열림">Reference</a></td>
-                <td></td>
+                <td><a href="./html/reference.html" target="_blank" title="새창열림">Reference</a></td>
+                <td>박은교</td>
                 <td class="etc"></td>
-                <td class="current-worked">진행중</td>
+                <td class="current-worked">완료</td>
               </tr>
               <tr class="depth-1">
-                <th class="t-center">ESG</th>
-                <td class="depth-2">ESG</td>
-                <td><a href="./html/contact.html" target="_blank" title="새창열림">ESG</a></td>
-                <td></td>
+                <th rowspan="3" class="t-center">ESG</th>
+                <td class="depth-2">환경경영</td>
+                <td><a href="./html/esg_environment.html" target="_blank" title="새창열림">esg_environment</a></td>
+                <td>박은교</td>
                 <td class="etc"></td>
-                <td class="current-worked">진행중</td>
+                <td class="current-worked">완료</td>
               </tr>
               <tr class="depth-1">
-                <th rowspan="1" class="t-center">CS Center</th>
-                <td class="depth-2">CS Center</td>
-                <td><a href="./html/news.html" target="_blank" title="새창열림">CS Center</a></td>
-                <td></td>
+                <td class="depth-2">윤리경영</td>
+                <td><a href="./html/esg_social.html" target="_blank" title="새창열림">esg_social</a></td>
+                <td>박은교</td>
                 <td class="etc"></td>
-                <td class="current-worked">진행중</td>
+                <td class="current-worked">완료</td>
               </tr>
               <tr class="depth-1">
-                <th rowspan="1" class="t-center">About us</th>
-                <td class="depth-2">About us</td>
-                <td><a href="./html/news.html" target="_blank" title="새창열림">About us</a></td>
-                <td></td>
+                <td class="depth-2">인권경영</td>
+                <td><a href="./html/esg_governance.html" target="_blank" title="새창열림">esg_governance</a></td>
+                <td>박은교</td>
                 <td class="etc"></td>
-                <td class="current-worked">진행중</td>
+                <td class="current-worked">완료</td>
+              </tr>
+              <tr class="depth-1">
+                <th rowspan="2" class="t-center">CS Center</th>
+                <td class="depth-2">이용안내</td>
+                <td><a href="./html/cs_center_info.html" target="_blank" title="새창열림">cs_center_info</a></td>
+                <td>박은교</td>
+                <td class="etc"></td>
+                <td class="current-worked">완료</td>
+              </tr>
+              <tr class="depth-1">
+                <td class="depth-2">고객문의</td>
+                <td><a href="./html/cs_center_result.html" target="_blank" title="새창열림">cs_center_result</a></td>
+                <td>박은교</td>
+                <td class="etc"></td>
+                <td class="current-worked">완료</td>
+              </tr>
+              <tr class="depth-1">
+                <th rowspan="4" class="t-center">About us</th>
+                <td class="depth-2">인사말</td>
+                <td><a href="./html/aboutus_greeting.html" target="_blank" title="새창열림">aboutus_greeting</a></td>
+                <td>박은교</td>
+                <td class="etc"></td>
+                <td class="current-worked">완료</td>
+              </tr>
+              <tr class="depth-1">
+                <td class="depth-2">주요연혁</td>
+                <td><a href="./html/aboutus_history.html" target="_blank" title="새창열림">aboutus_history</a></td>
+                <td>박은교</td>
+                <td class="etc"></td>
+                <td class="current-worked">완료</td>
+              </tr>
+              <tr class="depth-1">
+                <td class="depth-2">인증현황</td>
+                <td><a href="./html/aboutus_certificate.html" target="_blank" title="새창열림">aboutus_certificate</a></td>
+                <td>박은교</td>
+                <td class="etc"></td>
+                <td class="current-worked">완료</td>
+              </tr>
+              <tr class="depth-1">
+                <td class="depth-2">찾아오시는길</td>
+                <td><a href="./html/aboutus_roadmap.html" target="_blank" title="새창열림">aboutus_roadmap</a></td>
+                <td>변상우</td>
+                <td class="etc"></td>
+                <td class="current-worked">완료</td>
               </tr>
             </tbody>
           </table>
