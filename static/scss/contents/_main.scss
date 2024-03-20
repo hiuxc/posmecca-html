@@ -252,7 +252,6 @@
 }
 // 메인 고객 리스트
 .client-list {
-  height: 9rem;
   // background-repeat: repeat-x;
   // background-size: 135rem 9rem;
   // background-image: url('../../static/images/main/img-main-clientList.png');
@@ -260,6 +259,9 @@
   // animation: bg-scrolling-reverse 10s linear infinite;
   margin-bottom: 18rem;
   font-size: 0;
+  .swiper-wrapper {
+    height: 9rem;
+  }
   .swiper-slide {
     width: auto;
     img {
