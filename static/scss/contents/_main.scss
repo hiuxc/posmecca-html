@@ -554,9 +554,10 @@
     }
   }
   .client-list {
-    height: 6rem;
-    background-size: auto 6rem;
     margin-bottom: 12rem;
+    .swiper-wrapper {
+      height: 6rem;
+    }
   }
   .main-bottomContents {
     margin-top: 10rem;
