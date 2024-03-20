@@ -14,11 +14,12 @@
       + .list::before {
         content: '';
         position: absolute;
-        top: -vw(4);
+        top: 50%;
+        transform: translateY(-50%);
         left: -vw(-24);
         display: block;
-        width: -vw(1);
-        height: -vw(24);
+        width: 1px;
+        height: 2.4rem;
         background-color: #ddd;
       }
       &.active {
@@ -29,98 +30,101 @@
     }
     a {
       font-weight: 600;
-      font-size: min(2.4rem, -vw(24));
-      line-height: min(3.2rem, -vw(32));
+      font-size: 2.4rem;
+      line-height: 3.2rem;
     }
   }
   .tit-box {
-    margin-bottom: -vw(60);
-    font-size: min(4rem, -vw(40));
-    line-height: min(5.2rem, -vw(52));
+    margin-bottom: 6rem;
+    font-size: 4rem;
+    line-height: 5.2rem;
     font-weight: 700;
     text-align: center;
   }
   .subscript {
-    margin-top: -vw(60);
-    font-size: min(2.2rem, -vw(22));
-    line-height: min(3.6rem, -vw(36));
+    margin-top: 6rem;
+    font-size: 2.2rem;
+    line-height: 3.6rem;
     font-weight: 500;
     color: #555;
     text-align: center;
   }
   // 컨텐츠 스타일
   .card-num-list {
-    width: min(140rem, -vw(1400));
+    width: 100%;
+    max-width: 144rem;
     margin: 0 auto;
-    margin-bottom: -vw(160);
+    margin-bottom: 16rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: -vw(12);
+    gap: 1.2rem;
     dl {
       display: flex;
       align-items: center;
-      gap: -vw(40);
-      padding: -vw(32) -vw(60);
+      padding: 3.2rem 6rem;
       background-color: #fff;
       border: 1px solid #ddd;
-      border-radius: -vw(12);
-      font-family: 'Pretendard';
-      font-size: min(2rem, -vw(20));
-      line-height: min(2.6rem, -vw(26));
+      border-radius: 1.2rem;
+      font-size: 2rem;
+      line-height: 2.6rem;
       color: #555;
       box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.04);
+      font-weight: 500;
     }
     dt {
       font-weight: 900;
-      font-size: min(4rem, -vw(40));
-      line-height: min(3.2rem, -vw(32));
+      font-size: 4rem;
+      display: inline-block;
+      margin-right: 4rem;
+      line-height: 3.2rem;
       color: $green-color;
     }
   }
   .card-step-list {
-    width: min(140rem, -vw(1400));
+    width: 100%;
+    max-width: 144rem;
     margin: 0 auto;
-    margin-bottom: -vw(195);
+    margin-bottom: 19.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: -vw(40);
+    gap: 4rem;
     overflow: hidden;
     .card {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: -vw(80) -vw(42) -vw(43) -vw(50);
+      padding: 5rem 4.2rem 5rem;
       background-color: #fafafb;
-      border-radius: -vw(12);
+      border-radius: 1.2rem;
       text-align: center;
       .card-header {
-        margin-bottom: -vw(30);
+        margin-bottom: 3rem;
         font-weight: 700;
-        font-size: min(3.2rem, -vw(32));
-        line-height: min(3.2rem, -vw(32));
+        font-size: 3.2rem;
+        line-height: 1;
         span {
           display: block;
-          margin-bottom: -vw(12);
+          margin-bottom: 1.2rem;
           font-weight: 400;
-          font-size: min(1.8rem, -vw(18));
-          line-height: min(2.1rem, -vw(21));
+          font-size: 1.8rem;
+          line-height: 2.1rem;
           text-transform: uppercase;
           color: $green-color;
         }
       }
       .card-body {
-        height: -vw(86);
-        font-family: 'Pretendard';
+        height: 8.6rem;
         font-weight: 500;
-        font-size: min(2rem, -vw(20));
-        line-height: min(2.6rem, -vw(26));
+        font-size: 2rem;
+        line-height: 2.6rem;
         color: #555;
       }
     }
   }
   .txt-card {
-    width: min(140rem, -vw(1400));
+    width: 100%;
+    max-width: 144rem;
     display: flex;
     align-items: stretch;
     gap: -vw(14);
@@ -128,40 +132,40 @@
     margin-top: -vw(40);
     .card {
       flex: 1;
-      padding: -vw(60);
-      border-radius: -vw(12);
+      padding: 6rem;
+      border-radius: 1.2rem;
       border: 1px solid #ddd;
-      font-size: min(1.8rem, -vw(18));
-      line-height: min(2.6rem, -vw(26));
+      font-size: 1.8rem;
+      line-height: 2.6rem;
       font-weight: 500;
       color: #555;
       .card-header {
-        margin-bottom: -vw(30);
+        margin-bottom: 3rem;
         p {
-          margin-top: -vw(16);
+          margin-top: 1.6rem;
         }
       }
       .tit {
-        font-size: min(2.8rem, -vw(28));
-        line-height: min(3.8rem, -vw(38));
+        font-size: 2.8rem;
+        line-height: 3.8rem;
         font-weight: 600;
         color: #222;
       }
       .card-body {
         li {
           position: relative;
-          padding-left: -vw(16);
+          padding-left: 1.6rem;
           + li {
-            margin-top: -vw(16);
+            margin-top: 1.6rem;
           }
           &::before {
             content: '';
             position: absolute;
             left: 0;
-            top: -vw(11.5);
+            top: 1rem;
             display: block;
-            width: -vw(3);
-            height: -vw(3);
+            width: 0.3rem;
+            height: 0.3rem;
             background-color: #555;
           }
         }
@@ -269,7 +273,6 @@
       }
       .list + .list::before {
         left: -1.6rem;
-        top: 0.3rem;
         width: 1px;
         height: 2rem;
       }

@@ -4,7 +4,6 @@
   padding-top: -vw(160);
   padding-bottom: -vw(200);
   .subscript {
-    font-family: 'Pretendard';
     font-size: min(3.6rem, -vw(36));
     font-weight: 700;
     line-height: min(5.6rem, -vw(56));
@@ -32,13 +31,14 @@
   }
   .target-list {
     display: flex;
-    width: min(140rem, -vw(1400));
+    width: 100%;
+    max-width: 144rem;
     margin: 0 auto;
     .title {
       flex-shrink: 0;
       width: -vw(480);
       padding-left: -vw(81);
-      font-family: 'Pretendard';
+
       font-size: min(4rem, -vw(40));
       line-height: min(5.2rem, -vw(52));
       font-weight: 700;
@@ -64,7 +64,7 @@
       }
       dd {
         flex: 1 1 auto;
-        font-family: 'Pretendard';
+
         font-weight: 600;
         font-size: min(2.8rem, -vw(28));
         line-height: min(3.8rem, -vw(38));
@@ -72,7 +72,8 @@
     }
   }
   .declare-list {
-    width: min(140rem, -vw(1400));
+    width: 100%;
+    max-width: 144rem;
     margin: 0 auto;
     .title {
       margin-left: -vw(95);

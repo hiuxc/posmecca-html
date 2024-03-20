@@ -1,6 +1,10 @@
 /* 공통 탭 */
 .common-tab {
   border-bottom: 0.1rem solid #dedede;
+  &.w-half,
+  &.w-33 {
+    width: 100% !important;
+  }
   .swiper-wrapper {
     display: flex;
     width: 100%;
@@ -71,6 +75,7 @@
         height: 6.8rem;
         flex: 0 0 auto;
         padding: 0 1.6rem;
+
         a {
           font-size: 1.8rem;
           line-height: 6.8rem;
@@ -78,8 +83,39 @@
         &.active {
           &::after {
             width: calc(100% - 3.2rem);
+            right: auto;
             left: 50%;
             transform: translateX(-50%);
+          }
+        }
+      }
+    }
+    &.w-half {
+      width: 100% !important;
+      padding: 0;
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 50%;
+          padding: 0;
+          &.active {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    &.w-33 {
+      width: 100% !important;
+      padding: 0;
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 33.333%;
+          padding: 0;
+          &.active {
+            &::after {
+              width: 100%;
+            }
           }
         }
       }

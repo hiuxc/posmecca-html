@@ -4,7 +4,6 @@
   padding-top: 16rem;
   padding-bottom: 20rem;
   .unit {
-    font-family: 'Pretendard';
     font-size: 1.8rem;
     line-height: 2.6rem;
     font-weight: 500;
@@ -24,9 +23,11 @@
     .cell {
       .cell-img {
         position: relative;
-        padding: -vw(60) -vw(50);
+        // padding: -vw(60) -vw(50);
+        height: 24rem;
         margin-bottom: -vw(28);
         border-radius: -vw(12);
+        text-align: center;
         &::after {
           content: '';
           position: absolute;
@@ -39,12 +40,13 @@
         }
       }
       img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover;
+        width: auto !important;
+        height: 12rem !important;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
       }
       .cell-txt {
-        font-family: 'Pretendard';
         font-weight: 600;
         font-size: min(2.8rem, -vw(28));
         line-height: min(3.8rem, -vw(38));
@@ -105,10 +107,14 @@
       .cell {
         .cell-img {
           margin-bottom: 1.6rem;
-          padding: 2.2rem 1.5rem;
+          //padding: 2.2rem 1.5rem;
+          height: 12rem;
           border-radius: 1.2rem;
           &::after {
             border-radius: 1.2rem;
+          }
+          img {
+            height: 6rem !important;
           }
         }
         .cell-txt {
