@@ -25,55 +25,53 @@
     <link rel="stylesheet" href="../static/css/front.min.css" />
   </head>
   <body>
-    <div id="wrapper">
+    <div id="wrapper" class="main">
       <!-- header -->
       <script class="__include" src="./include/header.js"></script>
       <!-- header end -->
-
-      <!-- contents -->
-      <div id="container">
-        <!-- 메인 배너 스와이프 -->
-        <div class="main-banner swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-type="vdo">
-              <video id="bannerVideo" class="video-js" preload="auto" muted poster="../static/images/main/img-banner1.png" data-setup="{}">
-                <source src="../static/images/main/video-banner1.mp4" type="video/mp4" />
-              </video>
-              <div class="banner-txt">
-                <h5 class="tit">
-                  We Provide Solution,<br />
-                  Engineering &AMP; Management
-                </h5>
-                <p class="sub-txt">
-                  피오에스메카는<br />
-                  하드웨어, 소프트웨어 공급과 이에 따른 솔루션 컨설팅 <br />
-                  및 IT개발 서비스 유지보수와 운영지원 서비스도 <br />
-                  함께 제공하고 있습니다.
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide" data-slide-type="img">
-              <img src="../static/images/main/img-banner2.png" alt="" />
-              <div class="banner-txt">
-                <h5 class="tit">
-                  We Provide Solution,<br />
-                  Engineering &AMP; Management
-                </h5>
-                <p class="sub-tit">2023 ESG 우수 중소기업 선정</p>
-                <a href="#" class="btn-link">기사 확인하기</a>
-              </div>
+      <!-- 메인 배너 스와이프 -->
+      <div class="main-banner swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-slide-type="vdo">
+            <video id="bannerVideo" class="video-js" preload="auto" muted poster="../static/images/main/img-banner1.png" data-setup="{}">
+              <source src="../static/images/main/video-banner1.mp4" type="video/mp4" />
+            </video>
+            <div class="banner-txt">
+              <h5 class="tit">
+                We Provide Solution,<br />
+                Engineering &AMP; Management
+              </h5>
+              <p class="sub-txt">
+                피오에스메카는<br />
+                하드웨어, 소프트웨어 공급과 이에 따른 솔루션 컨설팅 <br />
+                및 IT개발 서비스 유지보수와 운영지원 서비스도 <br />
+                함께 제공하고 있습니다.
+              </p>
             </div>
           </div>
-          <div class="pagination-wrap">
-            <div class="swiper-pagination"></div>
-            <button type="button" class="swiper-control"></button>
-          </div>
-          <div class="swiper-navigation">
-            <div class="swiper-button-prev">이전 슬라이드</div>
-            <div class="swiper-button-next">다음 슬라이드</div>
+          <div class="swiper-slide" data-slide-type="img">
+            <img src="../static/images/main/img-banner2.png" alt="" />
+            <div class="banner-txt">
+              <h5 class="tit">
+                We Provide Solution,<br />
+                Engineering &AMP; Management
+              </h5>
+              <p class="sub-tit">2023 ESG 우수 중소기업 선정</p>
+              <a href="#" class="btn-link">기사 확인하기</a>
+            </div>
           </div>
         </div>
-
+        <div class="pagination-wrap">
+          <div class="swiper-pagination"></div>
+          <button type="button" class="swiper-control"></button>
+        </div>
+        <div class="swiper-navigation">
+          <div class="swiper-button-prev">이전 슬라이드</div>
+          <div class="swiper-button-next">다음 슬라이드</div>
+        </div>
+      </div>
+      <!-- contents -->
+      <div id="container" class="main-container">
         <div class="inner">
           <h3 class="main-section-tit font-SBAggro">REFERENCES</h3>
           <p class="main-section-txt">
@@ -81,7 +79,7 @@
             컨설팅 구축 및 ASP 서비스를 통해 최적화된 서비스를 제공합니다.
           </p>
           <!-- 메인 레퍼런스 영역 -->
-          <div class="main-references scrTopAnimation">
+          <div class="main-references">
             <div class="swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -138,16 +136,167 @@
         </div>
         <!-- 메인 고객사 루프 영역 -->
         <div class="client-list">
-          <!-- 고객사 리스트 -->
-          <ul>
-            <li>이랜드리테일</li>
-            <li>IBM</li>
-            <li>엽기떡볶이</li>
-            <li>홈플러스</li>
-            <li>BYC</li>
-            <li>AKIS</li>
-            <li>버거킹</li>
-          </ul>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_1.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_2.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_3.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_4.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_5.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_6.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_7.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_8.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_9.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_10.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_11.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_12.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_13.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_14.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_15.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_16.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_17.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_18.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_19.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_20.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_21.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_22.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_23.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_24.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_25.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_26.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_27.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_28.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_29.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_30.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_31.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_32.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_33.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_34.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_35.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_36.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_37.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_38.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_39.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_40.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_41.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_42.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_43.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_44.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_45.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_46.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_47.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_48.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_49.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_50.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../static/images/main/logo/img_logo_51.png" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="inner">

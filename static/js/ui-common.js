@@ -254,6 +254,7 @@ function commonUI() {
 /* main ui */
 let $mainBanner;
 let $mainReferences;
+let $clientList;
 let activeBullet;
 function mainUI() {
   /* 메인 배너 스와이퍼(영상 제어 포함) - 시작 */
@@ -377,6 +378,17 @@ function mainUI() {
     preventInteractionOnTransition: false
   });
 
+  $clientList = new Swiper('.client-list .swiper', {
+    slidesPerView: 'auto',
+    loop: true,
+    spaceBetween: 10,
+    autoplay: {
+      delay: 500,
+      disableOnInteraction: false
+    },
+    preventInteractionOnTransition: false
+  });
+
   // 메인 하단 SOLUTIONS & SERVICE
   function initializeBottomContentFeature() {
     const mainBottom = document.querySelector('.main-bottomContents');
@@ -388,7 +400,7 @@ function mainUI() {
 
     // 클릭 이벤트 리스너 설정
     bottomBtns.forEach((bottomBtn, i) => {
-      bottomBtn.addEventListener('click', function (event) {
+      bottomBtn.addEventListener('mouseover', function (event) {
         event.preventDefault();
 
         index = i;

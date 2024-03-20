@@ -35,36 +35,29 @@
   .circle-progress {
     margin: 10rem 0;
     ol {
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: -vw(20);
       width: 100%;
       max-width: 144rem;
       margin: 0 auto;
-      padding-bottom: -vw(130);
+      font-size: 0;
     }
     .step {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 2.4rem;
-      flex: 1 1 auto;
+      width: 20%;
+      display: inline-block;
       padding-bottom: 20%;
       border-radius: 50%;
       font-weight: 700;
-      font-size: min(3.2rem, -vw(32));
-      line-height: min(3.2rem, -vw(32));
+      font-size: 3.2rem;
+      line-height: 1;
       text-align: center;
       &::before {
         content: '';
         display: block;
-        width: 100%;
-        height: 100%;
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
         position: absolute;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         top: 0;
         z-index: 2;
         border-radius: 50%;
@@ -72,10 +65,17 @@
         border: 0.3rem solid $green-color;
         background-color: $white-color;
       }
+      .step-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
       .num {
         font-weight: 400;
-        font-size: min(1.8rem, -vw(18));
-        line-height: min(2.1rem, -vw(21));
+        font-size: 1.8rem;
+        line-height: 2.1rem;
         color: $green-color;
         position: relative;
         z-index: 2;
@@ -83,18 +83,21 @@
       strong {
         position: relative;
         z-index: 2;
+        display: block;
+        margin-top: 2.4rem;
       }
       .detail {
         position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding-top: 16.4rem;
+        top: 0;
+        left: 1rem;
+        width: calc(100% - 2rem);
+        height: 35rem;
+        box-sizing: border-box;
+        padding-top: 100%;
         border-radius: 0 0 20rem 20rem;
         background-color: #d7eed5;
-        font-size: -vw(20);
-        line-height: -vw(23);
+        font-size: 2rem;
+        line-height: 2.3rem;
         font-weight: 500;
         color: #666;
         z-index: -1;
@@ -102,26 +105,32 @@
     }
   }
   .icon-card-box {
-    display: flex;
-    gap: -vw(40);
     width: 100%;
     max-width: 144rem;
     margin: 0 auto;
     overflow: hidden;
+    font-size: 0;
+    > li {
+      display: inline-block;
+      width: 25%;
+      display: inline-block;
+      padding: 0 2rem;
+      vertical-align: top;
+    }
     .card {
-      flex: 1 1 auto;
-      width: min(32rem, -vw(320));
-      padding: -vw(60) -vw(32);
+      height: 43.4rem;
+      padding: 6rem 3.2rem;
       border: 1px solid #ddd;
-      border-radius: -vw(12);
+      border-radius: 1.2rem;
       text-align: center;
+      box-sizing: border-box;
       box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.04);
       i {
         display: block;
-        width: min(8rem, -vw(80));
-        height: min(8rem, -vw(80));
+        width: 8rem;
+        height: 8rem;
         margin: 0 auto;
-        margin-bottom: -vw(32);
+        margin-bottom: 3.2rem;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 0 0;
@@ -152,26 +161,26 @@
       }
       strong {
         font-weight: 600;
-        font-size: min(2.4rem, -vw(24));
+        font-size: 2.4rem;
       }
       ul {
-        margin-top: -vw(38);
+        margin-top: 3.8rem;
         text-align: left;
-        line-height: -vw(26);
+        line-height: 2.6rem;
         li {
           position: relative;
-          padding-left: -vw(13);
-          font-size: min(1.8rem, -vw(18));
+          padding-left: 1.3rem;
+          font-size: 1.8rem;
           color: #555;
           font-weight: 500;
           &::before {
             content: '';
             position: absolute;
-            top: -vw(10);
+            top: 1rem;
             left: 0;
             display: block;
-            width: -vw(3);
-            height: -vw(3);
+            width: 0.3rem;
+            height: 0.3rem;
             background-color: #555;
           }
         }
@@ -424,7 +433,26 @@
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
 ========================================================================== */
 /* tablet */
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1440px) {
+  .service-contents {
+    .icon-card-box {
+      > li {
+        padding: 0 1rem;
+      }
+      .card {
+        padding: 5rem 2rem;
+        i {
+          width: 6rem;
+          height: 6rem;
+        }
+        ul {
+          li {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
 }
 /* mobile */
 @media only screen and (max-width: 1024px) {
@@ -488,11 +516,18 @@
       row-gap: 1.2rem;
       width: auto;
       margin: 0 auto;
+      > li {
+        width: 100%;
+        & + li {
+          margin-top: 1.2rem;
+        }
+      }
       .card {
         width: 100%;
         max-width: 35.3rem;
         padding: 6rem 3.2rem;
         border-radius: 1.2rem;
+        height: 42rem;
         margin: 0 auto;
         i {
           width: 8rem;
