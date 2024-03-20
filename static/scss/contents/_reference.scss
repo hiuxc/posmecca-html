@@ -48,13 +48,14 @@
       }
       .cell-txt {
         font-weight: 600;
-        font-size: min(2.8rem, -vw(28));
-        line-height: min(3.8rem, -vw(38));
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+        font-family: 'Pretendard GOV', sans-serif !important;
         p {
-          margin-top: -vw(10);
-          font-size: min(1.8rem, -vw(18));
+          margin-top: 1rem;
+          font-size: 1.8rem;
           font-weight: 500;
-          line-height: min(2.6rem, -vw(26));
+          line-height: 2.6rem;
           color: #555;
         }
       }
