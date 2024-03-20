@@ -33,7 +33,7 @@
     text-align: center;
   }
   .circle-progress {
-    margin: 10rem 0;
+    margin: 10rem 0 26rem;
     ol {
       width: 100%;
       max-width: 144rem;
@@ -68,7 +68,7 @@
       .step-box {
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 45%;
         transform: translate(-50%, -50%);
         z-index: 2;
       }
@@ -91,10 +91,10 @@
         top: 0;
         left: 1rem;
         width: calc(100% - 2rem);
-        height: 35rem;
         box-sizing: border-box;
+        padding-bottom: 4rem;
         padding-top: 100%;
-        border-radius: 0 0 20rem 20rem;
+        border-radius: 20rem;
         background-color: #d7eed5;
         font-size: 2rem;
         line-height: 2.3rem;
@@ -441,6 +441,7 @@
       }
       .card {
         padding: 5rem 2rem;
+        height: 40rem;
         i {
           width: 6rem;
           height: 6rem;
@@ -449,6 +450,14 @@
           li {
             font-size: 1.6rem;
           }
+        }
+      }
+    }
+    .circle-progress {
+      .step {
+        strong {
+          font-size: 2.8rem;
+          margin-top: 1.8rem;
         }
       }
     }
@@ -502,9 +511,8 @@
           line-height: 1.9rem;
         }
         .detail {
-          padding-top: 9.5rem;
-          border-end-end-radius: 50%;
-          border-bottom-left-radius: 50%;
+          padding-top: 16rem;
+          border-radius: 8rem;
           font-size: 1.6rem;
           line-height: 2rem;
         }
