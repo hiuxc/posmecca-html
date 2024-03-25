@@ -203,9 +203,8 @@
       }
     }
     .row {
-      display: grid;
+      display: flex;
       align-items: center;
-      grid-template-columns: -vw(200) 1fr;
       margin-top: 2rem;
       .inputbox {
         width: 100%;
@@ -214,6 +213,8 @@
         font-size: 1.8rem;
         line-height: 2.6rem;
         font-weight: 700;
+        flex: 0 0 auto;
+        width: 15rem;
         &.req {
           span:after {
             content: '*';
@@ -223,6 +224,9 @@
             vertical-align: top;
           }
         }
+      }
+      .form {
+        width: 100%;
       }
     }
     &.signin {
@@ -378,10 +382,11 @@
         }
       }
       .row {
-        gap: 0.8rem;
-        grid-template-columns: repeat(1, 1fr);
+        flex-wrap: wrap;
+        flex-direction: column;
         .label {
           font-size: 1.6rem;
+          width: 100%;
           line-height: 2.4rem;
         }
       }
