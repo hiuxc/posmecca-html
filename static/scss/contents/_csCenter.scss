@@ -48,6 +48,7 @@
     font-weight: 500;
     color: #555;
     text-align: center;
+    font-family: 'Pretendard GOV' !important;
   }
   // 컨텐츠 스타일
   .card-num-list {
@@ -214,7 +215,7 @@
         line-height: 2.6rem;
         font-weight: 700;
         flex: 0 0 auto;
-        width: 15rem;
+        width: 17rem;
         &.req {
           span:after {
             content: '*';

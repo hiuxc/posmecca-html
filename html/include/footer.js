@@ -4,17 +4,6 @@ function includeFooter() {
   <div class="inner">
     <div class="logo" role="img" aria-label="POSMECCA"></div>
     <div>
-      <ul class="policy-list">
-        <li>
-          <a href="#">개인정보취급방침</a>
-        </li>
-        <li>
-          <a href="#">고객지원시스템</a>
-        </li>
-        <li>
-          <a href="#">자료실</a>
-        </li>
-      </ul>
       <div class="footer-address">
         <p>08584 서울특별시 금천구 두산로 70 A동 1807호/1808호 <span>(독산동 291-1 현대지식산업센터)</span></p>
         <p>
