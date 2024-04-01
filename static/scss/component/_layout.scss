@@ -202,10 +202,11 @@
     flex-direction: column-reverse;
     .policy-list {
       display: inline-flex;
-      margin-bottom: 1.6rem;
+      margin-bottom: 0.6rem;
       li {
         padding: 0 2rem;
         position: relative;
+        margin-bottom: 1rem;
         &:before {
           content: '';
           position: absolute;
@@ -217,16 +218,26 @@
           height: 1.1rem;
           background-color: rgba(34, 34, 34, 0.3);
         }
+        &.m-line {
+          display: none;
+          &::before {
+            content: none;
+          }
+        }
         &:first-child {
           padding-left: 0;
           &:before {
             content: none;
           }
         }
-        a {
+        a,
+        button {
           font-size: 1.6rem;
           font-weight: 700;
           color: $black-color2;
+          display: inline-block;
+          vertical-align: baseline;
+          font-family: 'Pretendard GOV' !important;
         }
       }
     }
@@ -406,6 +417,44 @@
   }
 }
 @media only screen and (max-width: 750px) {
+  #footer {
+    .inner {
+      .policy-list {
+        font-size: 0;
+        display: inline-block;
+        li {
+          display: inline-block;
+          padding: 0 1rem;
+          &::before {
+            left: auto;
+            right: 0;
+          }
+          &:first-child {
+            &::before {
+              content: '';
+            }
+          }
+          &.m-line {
+            display: block;
+          }
+          &:nth-child(4) {
+            padding-right: 0;
+            &::before {
+              content: none;
+            }
+          }
+          &:nth-child(6) {
+            padding-left: 0;
+          }
+          &:last-child {
+            &::before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -414,12 +463,13 @@
       background-size: auto 32rem;
     }
   }
-  /* footer */
   #footer {
     .inner {
       .policy-list {
         li {
-          padding: 0 1rem;
+          a {
+            font-size: 1.5rem;
+          }
         }
       }
     }

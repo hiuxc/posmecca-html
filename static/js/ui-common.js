@@ -249,6 +249,21 @@ function commonUI() {
       }
     });
   });
+
+  //개인정보 팝업
+  const privacyOpen = document.querySelector('.popPrivacyOpen');
+  const privacyClose = document.querySelectorAll('.popPrivacyClose');
+  const popPrivacy = document.querySelector('#popPrivacy');
+
+  privacyOpen.addEventListener('click', function () {
+    popPrivacy.classList.add('opened');
+  });
+
+  privacyClose.forEach(function (element) {
+    element.addEventListener('click', function () {
+      popPrivacy.classList.remove('opened');
+    });
+  });
 }
 
 /* main ui */

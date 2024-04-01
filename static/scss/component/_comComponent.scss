@@ -44,7 +44,111 @@
     }
   }
 }
-
+/* 개인정보 처리방침 */
+.table {
+  border-top: 0.1rem solid #9c9c9c;
+  border-bottom: 0.1rem solid #ddd;
+  font-size: 1.6rem;
+  color: #555;
+  &.text-left {
+    text-align: left;
+  }
+  th {
+    font-weight: 600;
+    line-height: 2.4rem;
+    padding: 1rem 3.2rem;
+    background: #fafafb;
+    border-left: 0.1rem solid #ddd;
+    &:first-child {
+      border-left: 0;
+    }
+  }
+  td {
+    font-weight: 400;
+    padding: 1rem 3.2rem;
+    border-top: 0.1rem solid #ddd;
+    border-left: 0.1rem solid #ddd;
+    &:first-child {
+      border-left: 0;
+    }
+  }
+}
+.rule-contents {
+  th,
+  td {
+    width: 33.3333%;
+  }
+}
+/* 개인정보 처리방침 팝업 */
+.pop-common {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  &.opened {
+    visibility: visible;
+    opacity: 1;
+    .pop-cont {
+      opacity: 1;
+      top: 50%;
+    }
+  }
+  .pop-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .pop-cont {
+    opacity: 0;
+    box-sizing: border-box;
+    padding: 0 0 4rem;
+    padding-top: 10.2rem;
+    border-radius: 2rem;
+    background-color: $white-color;
+    position: relative;
+    top: 40%;
+    max-width: 80rem;
+    width: calc(100% - 4rem);
+    transform: translateY(-50%);
+    margin: auto;
+    height: calc(100% - 4rem);
+    max-height: 55rem;
+    transition: 0.3s ease-in all;
+    .pop-close {
+      width: 4rem;
+      height: 4rem;
+      font-size: 0;
+      position: absolute;
+      right: 3rem;
+      top: 4rem;
+      background-size: 4rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M11.2632 28.7384L20.0015 20.0001L28.7399 28.7384M28.7399 11.2617L19.9999 20.0001L11.2632 11.2617' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .pre-line-wrap {
+      height: 100%;
+      overflow: auto;
+      padding: 0 4rem;
+    }
+    .pop-tit {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #202020;
+      line-height: 3.6rem;
+      position: absolute;
+      left: 4rem;
+      top: 4rem;
+    }
+  }
+}
 /* ==========================================================================
 	Media Queries for Responsive Design.
 ========================================================================== */

@@ -258,6 +258,21 @@
   }
 }
 
+.rule-contents {
+  .rule-txt {
+    margin-top: 2rem;
+  }
+  .table-tit {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    padding: 2rem 0;
+  }
+  .agree-cont {
+    margin-top: 2rem;
+  }
+}
+
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
 ========================================================================== */
@@ -389,6 +404,44 @@
           font-size: 1.6rem;
           width: 100%;
           line-height: 2.4rem;
+        }
+      }
+    }
+  }
+  .rule-contents {
+    .table {
+      font-size: 1.4rem;
+      display: flex;
+      thead {
+        flex: 0 0 auto;
+        tr {
+          display: block;
+          th {
+            display: block;
+            width: 8rem;
+            border-left: 0;
+            padding: 1rem;
+            line-height: 2rem;
+            & + th {
+              border-top: 0.1rem solid #ddd;
+            }
+          }
+        }
+      }
+      tbody {
+        flex: 1 1 auto;
+        tr,
+        td {
+          display: block;
+          width: 100%;
+        }
+        td {
+          border-left: 0.1rem solid #ddd;
+          padding: 1rem;
+          line-height: 2rem;
+          &:first-child {
+            border-top: 0;
+          }
         }
       }
     }
